@@ -34,7 +34,8 @@ export default async function PaquetePage({ params }) {
   const tipos = await q('SELECT id, nombre FROM tipo_prenda WHERE es_prenda = 1 ORDER BY nombre')
   const socios = await q('SELECT id, nombre FROM socio WHERE activo = 1 ORDER BY nombre')
   const skus = await q(
-    `SELECT sk.id, sk.codigo, pr.nombre producto, sk.talla, sk.color
+    `SELECT sk.id, sk.codigo, pr.nombre producto, sk.talla, sk.color,
+            pr.marca_id, pr.tipo_prenda_id
      FROM sku sk JOIN producto pr ON pr.id = sk.producto_id
      WHERE sk.estado = 'ACTIVO'
      ORDER BY pr.nombre, sk.talla`)

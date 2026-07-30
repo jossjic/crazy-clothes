@@ -1,6 +1,14 @@
 terraform {
   required_version = ">= 1.0"
 
+  backend "s3" {
+    bucket         = "crazy-clothes-tfstate-660759882203"
+    key            = "crazy-clothes/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "crazy-clothes-tflock"
+    encrypt        = true
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,8 +18,18 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws_region
-  profile = var.aws_profile  # Usar perfil específico
+  region = var.aws_region
+
+  default_tags {
+    tags = {
+      Project     = "crazy-clothes"
+      Owner       = "jossjic"
+      Environment = "temp-learning"
+      ExpiresAt   = "2026-09-01"
+      ManagedBy   = "terraform"
+      auto-delete = "no"
+    }
+  }
 }
 
 # VPC
@@ -301,12 +319,55 @@ resource "aws_key_pair" "main" {
   }
 }
 
+# IAM Role for SSM Session Manager access (no SSH keys needed)
+resource "aws_iam_role" "ssm" {
+  name = "crazy-clothes-ssm-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action    = "sts:AssumeRole"
+      Effect    = "Allow"
+      Principal = { Service = "ec2.amazonaws.com" }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "ssm_core" {
+  role       = aws_iam_role.ssm.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
+
+resource "aws_iam_instance_profile" "ssm" {
+  name = "crazy-clothes-ssm-profile"
+  role = aws_iam_role.ssm.name
+}
+
+# S3 read/write access for deploy artifacts (app.tar.gz, next-build.tar.gz,
+# database-dump.sql). Needed by user_data scripts on all instances.
+resource "aws_iam_role_policy" "ssm_s3_deploy" {
+  name = "crazy-clothes-s3-deploy-read"
+  role = aws_iam_role.ssm.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect   = "Allow"
+      Action   = ["s3:GetObject", "s3:PutObject", "s3:ListBucket"]
+      Resource = [
+        "arn:aws:s3:::crazy-clothes-deploy-660759882203",
+        "arn:aws:s3:::crazy-clothes-deploy-660759882203/*"
+      ]
+    }]
+  })
+}
+
 # Database EC2 Instance
 resource "aws_instance" "db" {
-  ami           = var.ami_id # Amazon Linux 2023
-  instance_type = var.db_instance_type
-  subnet_id     = aws_subnet.private_db_a.id
-  key_name      = aws_key_pair.main.key_name
+  ami                  = var.ami_id # Amazon Linux 2023
+  instance_type        = var.db_instance_type
+  subnet_id            = aws_subnet.private_db_a.id
+  key_name             = aws_key_pair.main.key_name
+  iam_instance_profile = aws_iam_instance_profile.ssm.name
 
   vpc_security_group_ids = [aws_security_group.db.id]
 
@@ -332,6 +393,10 @@ resource "aws_launch_template" "web" {
   key_name      = aws_key_pair.main.key_name
 
   vpc_security_group_ids = [aws_security_group.web.id]
+
+  iam_instance_profile {
+    name = aws_iam_instance_profile.ssm.name
+  }
 
   user_data = base64encode(templatefile("${path.module}/user_data_web.sh", {
     db_host = aws_instance.db.private_ip
@@ -426,6 +491,7 @@ resource "aws_instance" "bastion" {
   subnet_id                   = aws_subnet.public_a.id
   key_name                    = aws_key_pair.main.key_name
   associate_public_ip_address = true
+  iam_instance_profile        = aws_iam_instance_profile.ssm.name
 
   vpc_security_group_ids = [aws_security_group.bastion.id]
 

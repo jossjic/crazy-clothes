@@ -124,8 +124,19 @@ abc123def456   mysql:8.4   Up 5 seconds    0.0.0.0:33306->3306/tcp
 #### 4️⃣ Importar la base de datos
 
 ```bash
-docker exec -i cc_mysql mysql -uroot -ptest cc < database-dump.sql
+# Importar esquema base
+cd ~/Work/crazy-clothes
+docker cp schema_mysql.sql cc_mysql:/tmp/
+docker cp schema_mysql_vistas.sql cc_mysql:/tmp/
+docker exec cc_mysql mysql -uroot -ptest cc < /tmp/schema_mysql.sql
+docker exec cc_mysql mysql -uroot -ptest cc < /tmp/schema_mysql_vistas.sql
+
+# Aplicar migraciones (ver MIGRACIONES.md)
+docker cp migrations/001_add_pedido_tracking.sql cc_mysql:/tmp/
+docker exec cc_mysql mysql -uroot -ptest cc < /tmp/001_add_pedido_tracking.sql
 ```
+
+**⚠️ Importante**: El esquema base (`schema_mysql.sql`) NO incluye las tablas de pedidos. Debes aplicar la migración `001_add_pedido_tracking.sql` para que el módulo de pedidos funcione. Ver [`../MIGRACIONES.md`](../MIGRACIONES.md) para más detalles.
 
 Esto cargará:
 - 17 tablas con datos iniciales
