@@ -34,10 +34,9 @@ export default async function ReportesPage() {
 
   // Valor total del inventario (stock * costo)
   const valorInventarioResult = await q(`
-    SELECT COALESCE(SUM(vs.disponible * COALESCE(vpc.costo_total_mxn, sc.costo_total_usd)), 0) as valor
+    SELECT COALESCE(SUM(vs.disponible * vpc.costo_total_mxn), 0) as valor
     FROM v_stock vs
     LEFT JOIN v_pieza_costo vpc ON vpc.sku_id = vs.sku_id
-    LEFT JOIN sku_costo sc ON sc.sku_id = vs.sku_id
     WHERE vs.disponible > 0
   `)
   const valorInventario = valorInventarioResult[0] || { valor: 0 }
@@ -102,7 +101,6 @@ export default async function ReportesPage() {
     FROM venta v
     JOIN venta_linea vl ON vl.venta_id = v.id
     LEFT JOIN v_pieza_costo vpc ON vpc.sku_id = vl.sku_id
-    LEFT JOIN sku_costo sc ON sc.sku_id = vl.sku_id
   `)
   const utilidadNeta = utilidadNetaResult[0] || { utilidad_neta: 0 }
 
