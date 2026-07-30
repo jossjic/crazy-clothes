@@ -51,10 +51,10 @@ CREATE TABLE `capital_movimiento` (
   `id` int NOT NULL AUTO_INCREMENT,
   `fecha` date NOT NULL,
   `socio_id` smallint NOT NULL,
-  `tipo` enum('APORTACION','RETIRO','REINVERSION','GANANCIA','RETIRO_COMISION') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo` enum('APORTACION','RETIRO','REINVERSION','GANANCIA','RETIRO_COMISION') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `monto_mxn` decimal(10,2) NOT NULL,
-  `concepto` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `notas` text COLLATE utf8mb4_unicode_ci,
+  `concepto` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `notas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `fk_capital_socio` (`socio_id`),
@@ -302,7 +302,7 @@ CREATE TABLE `marca` (
   `nombre` varchar(80) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -311,7 +311,7 @@ CREATE TABLE `marca` (
 
 LOCK TABLES `marca` WRITE;
 /*!40000 ALTER TABLE `marca` DISABLE KEYS */;
-INSERT INTO `marca` VALUES (2,'Gymshark'),(4,'Otro'),(1,'YoungLA'),(3,'YoungLA / ONYX');
+INSERT INTO `marca` VALUES (6,'Civil Regime'),(5,'Cockbear'),(2,'Gymshark'),(7,'Onyx'),(4,'Otro'),(1,'YoungLA'),(3,'YoungLA / ONYX');
 /*!40000 ALTER TABLE `marca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,7 +349,7 @@ CREATE TABLE `movimiento` (
   CONSTRAINT `fk_mov_venta` FOREIGN KEY (`venta_id`) REFERENCES `venta` (`id`),
   CONSTRAINT `ck_mov_cantidad` CHECK ((`cantidad` > 0)),
   CONSTRAINT `ck_mov_tipo` CHECK ((`tipo` in (_utf8mb4'COMPRA',_utf8mb4'VENTA',_utf8mb4'TRASLADO_SALIDA',_utf8mb4'TRASLADO_ENTRADA',_utf8mb4'AJUSTE_MAS',_utf8mb4'AJUSTE_MENOS',_utf8mb4'DEVOLUCION')))
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -358,7 +358,7 @@ CREATE TABLE `movimiento` (
 
 LOCK TABLES `movimiento` WRITE;
 /*!40000 ALTER TABLE `movimiento` DISABLE KEYS */;
-INSERT INTO `movimiento` VALUES (9,'2026-03-24',14,'COMPRA',1,NULL,1,NULL,NULL,NULL,'foundation cropped tee black Medium 36usd'),(10,'2026-03-24',12,'COMPRA',1,NULL,1,NULL,NULL,NULL,'flagship track pants black medium 50usd'),(11,'2026-03-24',15,'COMPRA',1,NULL,1,NULL,NULL,NULL,'immortal killer joggers black medium 50usd'),(12,'2026-03-24',7,'COMPRA',1,NULL,1,NULL,NULL,NULL,'supervillain black medium 38usd'),(13,'2026-03-24',13,'COMPRA',1,NULL,1,NULL,NULL,NULL,'flagship track pants burgundy medium 50usd'),(14,'2026-03-23',8,'COMPRA',1,NULL,1,NULL,NULL,NULL,'warrior red medium 42usd'),(15,'2026-03-23',10,'COMPRA',1,NULL,1,NULL,NULL,NULL,'batman black medium 48usd'),(16,'2026-03-23',9,'COMPRA',1,NULL,1,NULL,NULL,NULL,'batman black small 48usd'),(17,'2026-04-06',28,'COMPRA',1,NULL,1,NULL,NULL,NULL,'onyx hoodie red M 57.60usd'),(18,'2026-04-06',27,'COMPRA',1,NULL,1,NULL,NULL,NULL,'onyx hoodie purple M 57.60usd'),(19,'2026-03-31',26,'COMPRA',1,NULL,1,NULL,NULL,NULL,'demon slayer rengoku tee 42usd (Jacqui)'),(20,'2026-04-21',33,'COMPRA',1,NULL,1,NULL,NULL,NULL,'W472 Legacy Seamless Tank Dusty Blue / XSmall 18usd'),(21,'2026-04-21',32,'COMPRA',1,NULL,1,NULL,NULL,NULL,'W149 Curve Hourglass Biker Shorts 6.5\" Grey / Small 26usd'),(22,'2026-04-21',31,'COMPRA',1,NULL,1,NULL,NULL,NULL,'4255 Batman Midnight Tees Joker P / Medium 22usd'),(23,'2026-04-21',11,'COMPRA',1,NULL,1,NULL,NULL,NULL,'BATMAN WHITE M 48usd'),(24,'2026-04-21',41,'COMPRA',1,NULL,1,NULL,NULL,NULL,'BATMAN ZIPUP M 76usd'),(25,'2026-04-21',40,'COMPRA',1,NULL,1,NULL,NULL,NULL,'BATMAN SWEATS M 76usd'),(26,'2026-05-14',44,'COMPRA',1,NULL,1,NULL,NULL,NULL,'CBUM Washed Hoodie Bros Stone Grey Marl Medium 70.20usd'),(27,'2026-05-14',43,'COMPRA',1,NULL,1,NULL,NULL,NULL,'CBUM Hockey Jersey Black Medium 50.40usd'),(28,'2026-05-14',42,'COMPRA',1,NULL,1,NULL,NULL,NULL,'CBUM Straight Leg Jogger Black Medium 63.00usd'),(29,'2026-06-26',45,'COMPRA',1,NULL,1,NULL,NULL,NULL,'Vital 1/4 Zip Black/Silhouette Grey Large 39.60usd'),(41,'2026-05-07',31,'VENTA',1,NULL,NULL,NULL,14,NULL,'Venta V-1'),(42,'2026-03-28',9,'VENTA',1,NULL,NULL,NULL,15,NULL,'Venta V-2'),(43,'2026-04-16',10,'VENTA',1,NULL,NULL,NULL,16,NULL,'Venta V-3'),(44,'2026-05-08',14,'VENTA',1,NULL,NULL,NULL,17,NULL,'Venta V-4'),(45,'2026-04-16',17,'VENTA',1,NULL,NULL,NULL,18,NULL,'Venta V-5'),(47,'2026-04-18',28,'VENTA',1,NULL,NULL,NULL,20,NULL,'Venta V-7'),(48,'2026-05-06',22,'VENTA',1,NULL,NULL,NULL,21,NULL,'Venta V-8'),(49,'2026-04-23',26,'VENTA',1,NULL,NULL,NULL,22,NULL,'Venta V-9'),(50,'2026-06-15',16,'VENTA',1,NULL,NULL,NULL,23,NULL,'Venta V-10'),(51,'2026-06-15',19,'VENTA',1,NULL,NULL,NULL,24,NULL,'Venta V-11'),(52,'2026-04-16',27,'VENTA',1,NULL,NULL,NULL,19,NULL,'Venta'),(53,'2026-07-30',24,'COMPRA',1,NULL,2,80,NULL,NULL,'ONYX V5 LONGSLEEVE S PURPPLE'),(54,'2026-07-30',25,'COMPRA',1,NULL,2,81,NULL,NULL,'ONYX V5 LONGSLEEVE XS OG BLUE');
+INSERT INTO `movimiento` VALUES (9,'2026-03-24',14,'COMPRA',1,NULL,1,NULL,NULL,NULL,'foundation cropped tee black Medium 36usd'),(10,'2026-03-24',12,'COMPRA',1,NULL,1,NULL,NULL,NULL,'flagship track pants black medium 50usd'),(11,'2026-03-24',15,'COMPRA',1,NULL,1,NULL,NULL,NULL,'immortal killer joggers black medium 50usd'),(12,'2026-03-24',7,'COMPRA',1,NULL,1,NULL,NULL,NULL,'supervillain black medium 38usd'),(13,'2026-03-24',13,'COMPRA',1,NULL,1,NULL,NULL,NULL,'flagship track pants burgundy medium 50usd'),(14,'2026-03-23',8,'COMPRA',1,NULL,1,NULL,NULL,NULL,'warrior red medium 42usd'),(15,'2026-03-23',10,'COMPRA',1,NULL,1,NULL,NULL,NULL,'batman black medium 48usd'),(16,'2026-03-23',9,'COMPRA',1,NULL,1,NULL,NULL,NULL,'batman black small 48usd'),(17,'2026-04-06',28,'COMPRA',1,NULL,1,NULL,NULL,NULL,'onyx hoodie red M 57.60usd'),(18,'2026-04-06',27,'COMPRA',1,NULL,1,NULL,NULL,NULL,'onyx hoodie purple M 57.60usd'),(19,'2026-03-31',26,'COMPRA',1,NULL,1,NULL,NULL,NULL,'demon slayer rengoku tee 42usd (Jacqui)'),(20,'2026-04-21',33,'COMPRA',1,NULL,1,NULL,NULL,NULL,'W472 Legacy Seamless Tank Dusty Blue / XSmall 18usd'),(21,'2026-04-21',32,'COMPRA',1,NULL,1,NULL,NULL,NULL,'W149 Curve Hourglass Biker Shorts 6.5\" Grey / Small 26usd'),(22,'2026-04-21',31,'COMPRA',1,NULL,1,NULL,NULL,NULL,'4255 Batman Midnight Tees Joker P / Medium 22usd'),(23,'2026-04-21',11,'COMPRA',1,NULL,1,NULL,NULL,NULL,'BATMAN WHITE M 48usd'),(24,'2026-04-21',41,'COMPRA',1,NULL,1,NULL,NULL,NULL,'BATMAN ZIPUP M 76usd'),(25,'2026-04-21',40,'COMPRA',1,NULL,1,NULL,NULL,NULL,'BATMAN SWEATS M 76usd'),(26,'2026-05-14',44,'COMPRA',1,NULL,1,NULL,NULL,NULL,'CBUM Washed Hoodie Bros Stone Grey Marl Medium 70.20usd'),(27,'2026-05-14',43,'COMPRA',1,NULL,1,NULL,NULL,NULL,'CBUM Hockey Jersey Black Medium 50.40usd'),(28,'2026-05-14',42,'COMPRA',1,NULL,1,NULL,NULL,NULL,'CBUM Straight Leg Jogger Black Medium 63.00usd'),(29,'2026-06-26',45,'COMPRA',1,NULL,1,NULL,NULL,NULL,'Vital 1/4 Zip Black/Silhouette Grey Large 39.60usd'),(41,'2026-05-07',31,'VENTA',1,NULL,NULL,NULL,14,NULL,'Venta V-1'),(42,'2026-03-28',9,'VENTA',1,NULL,NULL,NULL,15,NULL,'Venta V-2'),(43,'2026-04-16',10,'VENTA',1,NULL,NULL,NULL,16,NULL,'Venta V-3'),(44,'2026-05-08',14,'VENTA',1,NULL,NULL,NULL,17,NULL,'Venta V-4'),(45,'2026-04-16',17,'VENTA',1,NULL,NULL,NULL,18,NULL,'Venta V-5'),(47,'2026-04-18',28,'VENTA',1,NULL,NULL,NULL,20,NULL,'Venta V-7'),(48,'2026-05-06',22,'VENTA',1,NULL,NULL,NULL,21,NULL,'Venta V-8'),(49,'2026-04-23',26,'VENTA',1,NULL,NULL,NULL,22,NULL,'Venta V-9'),(50,'2026-06-15',16,'VENTA',1,NULL,NULL,NULL,23,NULL,'Venta V-10'),(51,'2026-06-15',19,'VENTA',1,NULL,NULL,NULL,24,NULL,'Venta V-11'),(52,'2026-04-16',27,'VENTA',1,NULL,NULL,NULL,19,NULL,'Venta'),(53,'2026-07-30',24,'COMPRA',1,NULL,2,80,NULL,NULL,'ONYX V5 LONGSLEEVE S PURPPLE'),(54,'2026-07-30',25,'COMPRA',1,NULL,2,81,NULL,NULL,'ONYX V5 LONGSLEEVE XS OG BLUE'),(55,'2026-07-30',17,'COMPRA',1,NULL,NULL,106,NULL,NULL,NULL),(56,'2026-07-30',22,'COMPRA',1,NULL,NULL,107,NULL,NULL,NULL),(57,'2026-07-30',16,'COMPRA',1,NULL,NULL,108,NULL,NULL,NULL),(58,'2026-07-30',19,'COMPRA',1,NULL,NULL,109,NULL,NULL,NULL),(62,'2026-04-06',29,'COMPRA',1,NULL,NULL,49,NULL,NULL,NULL),(63,'2026-07-30',18,'COMPRA',1,NULL,NULL,NULL,NULL,NULL,NULL),(64,'2026-07-30',20,'COMPRA',1,NULL,NULL,NULL,NULL,NULL,NULL),(65,'2026-07-30',21,'COMPRA',1,NULL,NULL,NULL,NULL,NULL,NULL),(67,'2026-07-30',23,'COMPRA',1,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `movimiento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -390,7 +390,7 @@ CREATE TABLE `paquete` (
   CONSTRAINT `fk_paquete_pedido` FOREIGN KEY (`pedido_proveedor_id`) REFERENCES `pedido_proveedor` (`id`),
   CONSTRAINT `fk_paquete_ubicacion` FOREIGN KEY (`ubicacion_id`) REFERENCES `ubicacion` (`id`),
   CONSTRAINT `ck_paquete_estado` CHECK ((`estado` in (_utf8mb4'PENDIENTE',_utf8mb4'EN_TRANSITO',_utf8mb4'RECIBIDO',_utf8mb4'CANCELADO')))
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -399,7 +399,7 @@ CREATE TABLE `paquete` (
 
 LOCK TABLES `paquete` WRITE;
 /*!40000 ALTER TABLE `paquete` DISABLE KEYS */;
-INSERT INTO `paquete` VALUES (13,'420785219434640109629005071033',2,6,NULL,'2026-03-24',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(14,'420785219434640109629005034571',2,6,NULL,'2026-03-23',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 0.75'),(15,'420785219261290381507421281593',2,6,NULL,'2026-03-23',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(16,'1Z08X89A0320538281',1,7,NULL,'2026-04-06',NULL,'RECIBIDO','Prov: YoungLA / ONYX, %Neg: 1'),(17,'4207852192612909887343571038978380',2,7,NULL,'2026-04-03',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(18,'42078521',2,7,NULL,'2026-04-01',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(19,'420785219261290381507421486172',2,7,NULL,'2026-03-31',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(20,'420785219400140109629002153594',2,7,NULL,'2026-03-31',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 0.5'),(21,'420785219434640109629005267580',2,7,NULL,'2026-03-31',NULL,'RECIBIDO','Prov: YoungLA, %Neg: N/A'),(22,'420785219200190244541414837086',2,8,NULL,'2026-04-16',NULL,'RECIBIDO','Prov: Cock Bear (Mothra), %Neg: N/A'),(23,'420785219261290988241640631926',2,8,NULL,'2026-04-15',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(24,'420785219261290988241640632879',2,8,NULL,'2026-04-15',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(25,'4207852192612909887343571000131188',2,9,NULL,'2026-04-24',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(26,'420785219434640109629006011632',2,9,NULL,'2026-04-21',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(27,'420785219434640109629005663979',2,9,NULL,'2026-04-21',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(28,'420785219261290381507421927491',2,9,NULL,'2026-04-20',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(29,'1ZC1R7210300545183',1,9,NULL,'2026-04-17',NULL,'RECIBIDO','Prov: YoungLA, %Neg: N/A'),(30,'4207852170149400108106244117836182',2,10,NULL,'2026-05-20',NULL,'RECIBIDO','Prov: Pokemon Center, %Neg: N/A'),(31,'1Z08X89A0300826855',1,10,NULL,'2026-05-14',NULL,'RECIBIDO','Prov: Gymshark, %Neg: 1'),(32,'420785219205590267338805428145',2,10,NULL,'2026-05-11',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(33,'4207852170149434908106245318083125',2,11,NULL,'2026-07-03',NULL,'RECIBIDO','Prov: Meta, %Neg: N/A'),(34,'420785219261290988241640667369',2,11,NULL,'2026-06-29',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(35,'4207852192612909887343571001065406',2,11,NULL,'2026-06-26',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(36,'1Z08X89A0301650873',1,11,NULL,'2026-06-26',NULL,'RECIBIDO','Prov: Gymshark, %Neg: 1'),(37,'420785219200190244541419304040',2,11,NULL,'2026-06-26',NULL,'RECIBIDO','Prov: Cock Bear (Ghidorah), %Neg: N/A'),(38,'1Z1F92320318576758',1,11,NULL,'2026-06-24',NULL,'RECIBIDO','Prov: Gymshark, %Neg: N/A'),(39,'420785219205590267338808841279',2,11,NULL,'2026-05-29',NULL,'RECIBIDO','Prov: Executioner, %Neg: N/A'),(40,'1Z08VY74YW303222345',3,8,NULL,'2026-04-02',2,'RECIBIDO',NULL),(41,'1Z08X89AYW01891981',3,11,NULL,'2026-06-26',2,'RECIBIDO',NULL);
+INSERT INTO `paquete` VALUES (13,'420785219434640109629005071033',2,6,NULL,'2026-03-24',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(14,'420785219434640109629005034571',2,6,NULL,'2026-03-23',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 0.75'),(15,'420785219261290381507421281593',2,6,NULL,'2026-03-23',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(16,'1Z08X89A0320538281',1,7,NULL,'2026-04-06',NULL,'RECIBIDO','Prov: YoungLA / ONYX, %Neg: 1'),(17,'4207852192612909887343571038978380',2,7,NULL,'2026-04-03',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(18,'42078521',2,7,NULL,'2026-04-01',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(19,'420785219261290381507421486172',2,7,NULL,'2026-03-31',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(20,'420785219400140109629002153594',2,7,NULL,'2026-03-31',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 0.5'),(21,'420785219434640109629005267580',2,7,NULL,'2026-03-31',NULL,'RECIBIDO','Prov: YoungLA, %Neg: N/A'),(22,'420785219200190244541414837086',2,8,NULL,'2026-04-16',NULL,'RECIBIDO','Prov: Cock Bear (Mothra), %Neg: N/A'),(23,'420785219261290988241640631926',2,8,NULL,'2026-04-15',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(24,'420785219261290988241640632879',2,8,NULL,'2026-04-15',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(25,'4207852192612909887343571000131188',2,9,NULL,'2026-04-24',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(26,'420785219434640109629006011632',2,9,NULL,'2026-04-21',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(27,'420785219434640109629005663979',2,9,NULL,'2026-04-21',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(28,'420785219261290381507421927491',2,9,NULL,'2026-04-20',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(29,'1ZC1R7210300545183',1,9,NULL,'2026-04-17',NULL,'RECIBIDO','Prov: YoungLA, %Neg: N/A'),(30,'4207852170149400108106244117836182',2,10,NULL,'2026-05-20',NULL,'RECIBIDO','Prov: Pokemon Center, %Neg: N/A'),(31,'1Z08X89A0300826855',1,10,NULL,'2026-05-14',NULL,'RECIBIDO','Prov: Gymshark, %Neg: 1'),(32,'420785219205590267338805428145',2,10,NULL,'2026-05-11',NULL,'RECIBIDO','Prov: YoungLA, %Neg: 1'),(33,'4207852170149434908106245318083125',2,11,NULL,'2026-07-03',NULL,'RECIBIDO','Prov: Meta, %Neg: N/A'),(34,'420785219261290988241640667369',2,11,NULL,'2026-06-29',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(35,'4207852192612909887343571001065406',2,11,NULL,'2026-06-26',NULL,'RECIBIDO','Prov: N/A, %Neg: N/A'),(36,'1Z08X89A0301650873',1,11,NULL,'2026-06-26',NULL,'RECIBIDO','Prov: Gymshark, %Neg: 1'),(37,'420785219200190244541419304040',2,11,NULL,'2026-06-26',NULL,'RECIBIDO','Prov: Cock Bear (Ghidorah), %Neg: N/A'),(38,'1Z1F92320318576758',1,11,NULL,'2026-06-24',NULL,'RECIBIDO','Prov: Gymshark, %Neg: N/A'),(39,'420785219205590267338808841279',2,11,NULL,'2026-05-29',NULL,'RECIBIDO','Prov: Executioner, %Neg: N/A'),(40,'1Z08VY74YW303222345',3,8,NULL,'2026-04-02',2,'RECIBIDO',NULL),(41,'1Z08X89AYW01891981',3,11,NULL,'2026-06-26',2,'RECIBIDO',NULL),(42,'380419641012',3,NULL,NULL,'2026-07-30',NULL,'RECIBIDO',NULL),(43,'380416815890',3,NULL,NULL,'2026-07-30',NULL,'RECIBIDO',NULL),(44,'1Z08X89AYW00349426',1,NULL,NULL,'2026-07-30',NULL,'RECIBIDO',NULL),(45,'382233588111',3,NULL,NULL,'2026-07-30',NULL,'RECIBIDO',NULL),(46,'1Z08X89A0320535275',1,NULL,NULL,'2026-07-30',NULL,'RECIBIDO',NULL),(48,'1Z08YY74YW30322345',1,NULL,NULL,'2026-07-30',NULL,'RECIBIDO',NULL);
 /*!40000 ALTER TABLE `paquete` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -427,6 +427,46 @@ LOCK TABLES `paqueteria` WRITE;
 /*!40000 ALTER TABLE `paqueteria` DISABLE KEYS */;
 INSERT INTO `paqueteria` VALUES (1,'UPS','1Z'),(2,'USPS','420'),(3,'FedEx','38');
 /*!40000 ALTER TABLE `paqueteria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedido`
+--
+
+DROP TABLE IF EXISTS `pedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedido` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `folio` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `proveedor_id` smallint NOT NULL,
+  `socio_comprador_id` smallint DEFAULT NULL,
+  `fecha_pedido` date NOT NULL,
+  `fecha_estimada` date DEFAULT NULL,
+  `fecha_recepcion` date DEFAULT NULL,
+  `estado` enum('PENDIENTE','EN_TRANSITO','RECIBIDO','CANCELADO') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PENDIENTE',
+  `tracking` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `costo_estimado_usd` decimal(12,2) DEFAULT NULL,
+  `notas` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `fk_pedido_tracking_socio` (`socio_comprador_id`),
+  KEY `idx_pedido_estado` (`estado`),
+  KEY `idx_pedido_fecha` (`fecha_pedido`),
+  KEY `idx_pedido_proveedor` (`proveedor_id`),
+  CONSTRAINT `fk_pedido_tracking_proveedor` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedor` (`id`),
+  CONSTRAINT `fk_pedido_tracking_socio` FOREIGN KEY (`socio_comprador_id`) REFERENCES `socio` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedido`
+--
+
+LOCK TABLES `pedido` WRITE;
+/*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -525,6 +565,47 @@ LOCK TABLES `pedido_orden_linea` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pedido_pieza`
+--
+
+DROP TABLE IF EXISTS `pedido_pieza`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedido_pieza` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pedido_id` int NOT NULL,
+  `marca_id` smallint NOT NULL,
+  `tipo_prenda_id` smallint NOT NULL,
+  `sku_id` int DEFAULT NULL,
+  `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cantidad_pedida` int NOT NULL DEFAULT '1',
+  `cantidad_recibida` int NOT NULL DEFAULT '0',
+  `talla` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `costo_unitario_usd` decimal(10,2) DEFAULT NULL,
+  `notas` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `fk_pedido_pieza_marca` (`marca_id`),
+  KEY `fk_pedido_pieza_tipo` (`tipo_prenda_id`),
+  KEY `idx_pedido_pieza_pedido` (`pedido_id`),
+  KEY `idx_pedido_pieza_sku` (`sku_id`),
+  CONSTRAINT `fk_pedido_pieza_marca` FOREIGN KEY (`marca_id`) REFERENCES `marca` (`id`),
+  CONSTRAINT `fk_pedido_pieza_pedido` FOREIGN KEY (`pedido_id`) REFERENCES `pedido` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_pedido_pieza_sku` FOREIGN KEY (`sku_id`) REFERENCES `sku` (`id`),
+  CONSTRAINT `fk_pedido_pieza_tipo` FOREIGN KEY (`tipo_prenda_id`) REFERENCES `tipo_prenda` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedido_pieza`
+--
+
+LOCK TABLES `pedido_pieza` WRITE;
+/*!40000 ALTER TABLE `pedido_pieza` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedido_pieza` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pedido_proveedor`
 --
 
@@ -594,7 +675,7 @@ CREATE TABLE `pieza` (
   CONSTRAINT `ck_pieza_destino` CHECK ((`destino` in (_utf8mb4'NEGOCIO',_utf8mb4'PERSONAL'))),
   CONSTRAINT `ck_pieza_factor` CHECK (((`factor_manual` is null) or (`factor_manual` > 0))),
   CONSTRAINT `personal_sin_sku` CHECK (((`destino` = _utf8mb4'NEGOCIO') or (`sku_id` is null)))
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -603,7 +684,7 @@ CREATE TABLE `pieza` (
 
 LOCK TABLES `pieza` WRITE;
 /*!40000 ALTER TABLE `pieza` DISABLE KEYS */;
-INSERT INTO `pieza` VALUES (37,13,'foundation cropped tee black Medium 36usd',1,1,1,NULL,'NEGOCIO',NULL,14,NULL,NULL),(38,13,'flagship track pants black medium 50usd',1,1,1,NULL,'NEGOCIO',NULL,12,NULL,NULL),(39,13,'immortal killer joggers black medium 50usd',1,1,1,NULL,'NEGOCIO',NULL,15,NULL,NULL),(40,13,'foundation cropped tees black small 36usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(41,13,'foundation cropped tees black small 36usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(42,13,'supervillain black medium 38usd',1,1,1,NULL,'NEGOCIO',NULL,7,NULL,NULL),(43,13,'flagship track pants burgundy medium 50usd',1,1,1,NULL,'NEGOCIO',NULL,13,NULL,NULL),(44,14,'warrior red large PERSONAL 42usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(45,14,'warrior red medium 42usd',1,1,1,NULL,'NEGOCIO',NULL,8,NULL,NULL),(46,14,'batman black medium 48usd',1,1,1,NULL,'NEGOCIO',NULL,10,NULL,NULL),(47,14,'batman black small 48usd',1,1,1,NULL,'NEGOCIO',NULL,9,NULL,NULL),(48,16,'onyx hoodie red M 57.60usd',1,1,1,NULL,'NEGOCIO',NULL,28,NULL,NULL),(49,16,'onyx hoodie light grey M 57.60usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(50,16,'onyx hoodie purple M 57.60usd',1,1,1,NULL,'NEGOCIO',NULL,27,NULL,NULL),(51,20,'demon slayer rengoku tee 42usd (Jacqui)',1,1,1,NULL,'NEGOCIO',NULL,26,NULL,NULL),(52,20,'quarter zipup PERSONAL jj 55usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(53,21,'demon slayer sweats large PERSONAL 62usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(54,21,'tanjiro zipup PERSONAL 65usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(55,21,'rengoku zipup PERSONAL 65usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(56,22,'Mothra\'s City Chaos Tee Black S PERSONAL luise',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(57,26,'W2230 Camo Cargo Joggers Pink Small 52usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(58,26,'W472 Legacy Seamless Tank Dusty Blue XSmall 18usd',1,1,1,NULL,'NEGOCIO',NULL,33,NULL,NULL),(59,26,'W149 Curve Hourglass Biker Shorts Grey Small 26usd',1,1,1,NULL,'NEGOCIO',NULL,32,NULL,NULL),(60,26,'W233 Curve Seamless Leggings Green Medium 55usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(61,26,'4255 Batman Midnight Tees Joker P Medium 22usd',1,1,1,NULL,'NEGOCIO',NULL,31,NULL,NULL),(62,27,'BATMAN WHITE M 48usd',1,1,1,NULL,'NEGOCIO',NULL,11,NULL,NULL),(63,27,'BATMAN ZIPUP M 76usd',1,1,1,NULL,'NEGOCIO',NULL,41,NULL,NULL),(64,27,'BATMAN SWEATS M 76usd',1,1,1,NULL,'NEGOCIO',NULL,40,NULL,NULL),(65,29,'AOT WHITE TEE L PERSONAL 42usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(66,29,'AOT JOGGERS L RED PERSONAL 68usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(67,29,'BATMAN SWEATS M PERSONAL 76usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(68,30,'N\'s Zekrom ETB Pokemon PERSONAL',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(69,31,'CBUM Washed Hoodie Grey Marl Medium 70.20usd',1,1,1,NULL,'NEGOCIO',NULL,44,NULL,NULL),(70,31,'CBUM Hockey Jersey Black Medium 50.40usd',1,1,1,NULL,'NEGOCIO',NULL,43,NULL,NULL),(71,31,'CBUM Straight Leg Jogger Black Medium 63.00usd',1,1,1,NULL,'NEGOCIO',NULL,42,NULL,NULL),(72,32,'OMEGA BREATH PANTS LUISCRUS XS 90usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(73,32,'FIH L 68usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(74,32,'FIH M 68usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(75,33,'Meta Oculus Quest 3 128GB PERSONAL JJ 305usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(76,36,'Campus 7\" Shorts Light Grey XSmall 12.60usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(77,36,'Carlos Belcast Track Jacket Grey XSmall 45usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(78,36,'Vital 1/4 Zip Black/Grey Large 39.60usd',1,1,1,NULL,'NEGOCIO',NULL,45,NULL,NULL),(79,36,'Campus Mesh Shorts Black/Red Small 20usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,NULL),(80,40,'ONYX V5 LONGSLEEVE S PURPPLE',1,2,1,NULL,'NEGOCIO',NULL,24,50.40,NULL),(81,40,'ONYX V5 LONGSLEEVE XS OG BLUE',1,2,1,NULL,'NEGOCIO',NULL,25,50.40,NULL),(82,41,'KETTLEBELL LLAVERO',3,2,2,NULL,'PERSONAL',5,NULL,25.20,NULL);
+INSERT INTO `pieza` VALUES (37,13,'foundation cropped tee black Medium 36usd',1,1,1,NULL,'NEGOCIO',NULL,14,NULL,NULL),(38,13,'flagship track pants black medium 50usd',1,1,1,NULL,'NEGOCIO',NULL,12,NULL,NULL),(39,13,'immortal killer joggers black medium 50usd',1,1,1,NULL,'NEGOCIO',NULL,15,NULL,NULL),(40,13,'foundation cropped tees black small 36usd',1,1,1,NULL,'PERSONAL',6,NULL,NULL,NULL),(41,13,'foundation cropped tees black small 36usd',1,1,1,NULL,'PERSONAL',5,NULL,NULL,NULL),(42,13,'supervillain black medium 38usd',1,1,1,NULL,'NEGOCIO',NULL,7,NULL,NULL),(43,13,'flagship track pants burgundy medium 50usd',1,1,1,NULL,'NEGOCIO',NULL,13,NULL,NULL),(44,14,'warrior red large PERSONAL 42usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(45,14,'warrior red medium 42usd',1,1,1,NULL,'NEGOCIO',NULL,8,NULL,NULL),(46,14,'batman black medium 48usd',1,1,1,NULL,'NEGOCIO',NULL,10,NULL,NULL),(47,14,'batman black small 48usd',1,1,1,NULL,'NEGOCIO',NULL,9,NULL,NULL),(48,16,'onyx hoodie red M 57.60usd',1,1,1,NULL,'NEGOCIO',NULL,28,NULL,NULL),(49,16,'onyx hoodie light grey M 57.60usd',1,1,1,NULL,'NEGOCIO',NULL,29,NULL,NULL),(50,16,'onyx hoodie purple M 57.60usd',1,1,1,NULL,'NEGOCIO',NULL,27,NULL,NULL),(51,20,'demon slayer rengoku tee 42usd (Jacqui)',1,1,1,NULL,'NEGOCIO',NULL,26,NULL,NULL),(52,20,'quarter zipup PERSONAL jj 55usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(53,21,'demon slayer sweats large PERSONAL 62usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(54,21,'tanjiro zipup PERSONAL 65usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(55,21,'rengoku zipup PERSONAL 65usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(56,22,'Mothra\'s City Chaos Tee Black S PERSONAL luise',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(57,26,'W2230 Camo Cargo Joggers Pink Small 52usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,'PÃ‰RDIDA OPERATIVA - Collab fallido, cuenta como gasto sin inventario resultante'),(58,26,'W472 Legacy Seamless Tank Dusty Blue XSmall 18usd',1,1,1,NULL,'NEGOCIO',NULL,33,NULL,NULL),(59,26,'W149 Curve Hourglass Biker Shorts Grey Small 26usd',1,1,1,NULL,'NEGOCIO',NULL,32,NULL,NULL),(60,26,'W233 Curve Seamless Leggings Green Medium 55usd',1,1,1,NULL,'NEGOCIO',NULL,NULL,NULL,'PÃ‰RDIDA OPERATIVA - Collab con influencer, cuenta como gasto sin inventario resultante'),(61,26,'4255 Batman Midnight Tees Joker P Medium 22usd',1,1,1,NULL,'NEGOCIO',NULL,31,NULL,NULL),(62,27,'BATMAN WHITE M 48usd',1,1,1,NULL,'NEGOCIO',NULL,11,NULL,NULL),(63,27,'BATMAN ZIPUP M 76usd',1,1,1,NULL,'NEGOCIO',NULL,41,NULL,NULL),(64,27,'BATMAN SWEATS M 76usd',1,1,1,NULL,'NEGOCIO',NULL,40,NULL,NULL),(65,29,'AOT WHITE TEE L PERSONAL 42usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(66,29,'AOT JOGGERS L RED PERSONAL 68usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(67,29,'BATMAN SWEATS M PERSONAL 76usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(68,30,'N\'s Zekrom ETB Pokemon PERSONAL',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(69,31,'CBUM Washed Hoodie Grey Marl Medium 70.20usd',1,1,1,NULL,'NEGOCIO',NULL,44,NULL,NULL),(70,31,'CBUM Hockey Jersey Black Medium 50.40usd',1,1,1,NULL,'NEGOCIO',NULL,43,NULL,NULL),(71,31,'CBUM Straight Leg Jogger Black Medium 63.00usd',1,1,1,NULL,'NEGOCIO',NULL,42,NULL,NULL),(72,32,'OMEGA BREATH PANTS LUISCRUS XS 90usd',1,1,1,NULL,'PERSONAL',6,NULL,NULL,NULL),(73,32,'FIH L 68usd',1,1,1,NULL,'PERSONAL',6,NULL,NULL,NULL),(74,32,'FIH M 68usd',1,1,1,NULL,'PERSONAL',4,NULL,NULL,NULL),(75,33,'Meta Oculus Quest 3 128GB PERSONAL JJ 305usd',1,1,1,NULL,'PERSONAL',NULL,NULL,NULL,NULL),(76,36,'Campus 7\" Shorts Light Grey XSmall 12.60usd',1,1,1,NULL,'PERSONAL',6,NULL,NULL,NULL),(77,36,'Carlos Belcast Track Jacket Grey XSmall 45usd',1,1,1,NULL,'PERSONAL',6,NULL,NULL,NULL),(78,36,'Vital 1/4 Zip Black/Grey Large 39.60usd',1,1,1,NULL,'NEGOCIO',NULL,45,NULL,NULL),(79,36,'Campus Mesh Shorts Black/Red Small 20usd',1,1,1,NULL,'PERSONAL',6,NULL,NULL,NULL),(80,40,'ONYX V5 LONGSLEEVE S PURPPLE',1,2,1,NULL,'NEGOCIO',NULL,24,50.40,NULL),(81,40,'ONYX V5 LONGSLEEVE XS OG BLUE',1,2,1,NULL,'NEGOCIO',NULL,25,50.40,NULL),(82,41,'KETTLEBELL LLAVERO',3,2,2,NULL,'PERSONAL',5,NULL,25.20,NULL),(83,42,'Godzilla\'s Hell Forever Hoodie in Black S',1,4,6,NULL,'PERSONAL',NULL,NULL,85.00,'FedEx 380419641012 - Personal'),(84,42,'Godzilla Hell Lounger Sweat Pants in Black S',1,4,13,NULL,'PERSONAL',NULL,NULL,85.00,'FedEx 380419641012 - Personal'),(85,43,'Monsters In Time Lex Double Layer Hoodie Black/Black M',1,5,6,NULL,'PERSONAL',4,NULL,68.00,'FedEx 380416815890 - Con descuento COCKBEAR20'),(86,43,'Monsters In Time Eternal Wide Leg Pants Black L',1,5,13,NULL,'PERSONAL',4,NULL,68.00,'FedEx 380416815890 - Con descuento COCKBEAR20'),(87,44,'Gymshark Vital Seamless 2.0 Leggings Cobalt Purple Marl S',1,2,11,NULL,'PERSONAL',NULL,NULL,32.40,'UPS 1Z08X89AYW00349426'),(88,44,'Gymshark Minimal Sports Bra Black S',1,2,10,NULL,'PERSONAL',NULL,NULL,21.00,'UPS 1Z08X89AYW00349426'),(89,44,'Gymshark Adapt Animal Seamless Sports Bra Cherry Purple/Reset Pink M',1,2,10,NULL,'PERSONAL',NULL,NULL,32.20,'UPS 1Z08X89AYW00349426'),(90,44,'Gymshark Flex High Waisted Leggings Black S',1,2,11,NULL,'PERSONAL',NULL,NULL,30.00,'UPS 1Z08X89AYW00349426'),(91,44,'Gymshark Everyday Seamless Shorts 2.0 GS Black M',1,2,8,NULL,'PERSONAL',NULL,NULL,22.40,'UPS 1Z08X89AYW00349426'),(92,44,'Gymshark Vital Sports Bra Cobalt Purple Marl S',1,2,10,NULL,'PERSONAL',NULL,NULL,15.20,'UPS 1Z08X89AYW00349426'),(93,45,'Civil Racing Biker Jacket Red M',1,6,14,NULL,'PERSONAL',6,NULL,127.50,'FedEx 382233588111 - Con descuento BLOOM15 - Luis'),(94,45,'Civil Racing Biker Jacket Red S',1,6,14,NULL,'PERSONAL',4,NULL,127.50,'FedEx 382233588111 - Con descuento BLOOM15 - Jose'),(96,41,'Gymshark Power T-Shirt Black/Conditioning Red M',1,2,2,NULL,'PERSONAL',4,NULL,28.80,'UPS 1Z08X89AYW01891981'),(97,41,'Gymshark Charge T-Shirt Black/Wash XS',1,2,2,NULL,'PERSONAL',6,NULL,28.80,'UPS 1Z08X89AYW01891981 - Out of stock item'),(98,41,'Gymshark Charge T-Shirt Black/Wash M',1,2,2,NULL,'PERSONAL',5,NULL,28.80,'UPS 1Z08X89AYW01891981 - Out of stock item'),(99,48,'Onyx 5.0 Seamless Long Sleeve T-Shirt Purple S',1,7,4,NULL,'PERSONAL',NULL,NULL,50.40,'UPS 1Z08YY74YW30322345 - $100.80 total - 10% discount'),(100,48,'Onyx 5.0 Seamless Long Sleeve T-Shirt OG Blue XS',1,7,4,NULL,'PERSONAL',NULL,NULL,50.40,'UPS 1Z08YY74YW30322345 - $100.80 total - 10% discount'),(106,46,'Onyx 5.0 Seamless T-Shirt Medium Red Carmine',1,7,1,NULL,'NEGOCIO',NULL,17,40.50,'Vendida V-5'),(107,46,'Onyx 5.0 Seamless T-Shirt Small OG Blue',1,7,1,NULL,'NEGOCIO',NULL,22,40.50,'Vendida V-8'),(108,46,'Onyx 5.0 Seamless T-Shirt Small Red Carmine',1,7,1,NULL,'NEGOCIO',NULL,16,40.50,'Vendida V-10'),(109,46,'Onyx 5.0 Seamless T-Shirt Small Light Grey',1,7,1,NULL,'NEGOCIO',NULL,19,40.50,'Vendida V-11'),(111,46,'Onyx 5.0 Seamless T-Shirt OG Blue Medium',1,7,1,NULL,'PERSONAL',NULL,NULL,40.50,'Personal - OG Blue M'),(112,46,'Onyx 5.0 Seamless T-Shirt Large Red Carmine',1,7,1,NULL,'NEGOCIO',NULL,18,40.50,'UPS 1Z08X89A0320535275'),(113,46,'Onyx 5.0 Seamless T-Shirt Medium Light Grey',1,7,1,NULL,'NEGOCIO',NULL,20,40.50,'UPS 1Z08X89A0320535275'),(114,46,'Onyx 5.0 Seamless T-Shirt Large Light Grey',1,7,1,NULL,'NEGOCIO',NULL,21,40.50,'UPS 1Z08X89A0320535275'),(116,46,'Onyx 5.0 Seamless T-Shirt Large OG Blue',1,7,1,NULL,'NEGOCIO',NULL,23,40.50,'UPS 1Z08X89A0320535275 - En Puebla');
 /*!40000 ALTER TABLE `pieza` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -755,7 +836,7 @@ CREATE TABLE `sku` (
   CONSTRAINT `fk_sku_producto` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id`),
   CONSTRAINT `fk_sku_ubicacion` FOREIGN KEY (`ubicacion_id`) REFERENCES `ubicacion` (`id`),
   CONSTRAINT `ck_sku_estado` CHECK ((`estado` in (_utf8mb4'ACTIVO',_utf8mb4'DESCONTINUADO',_utf8mb4'BORRADOR')))
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -835,7 +916,7 @@ CREATE TABLE `tipo_prenda` (
   `es_prenda` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nombre` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -844,7 +925,7 @@ CREATE TABLE `tipo_prenda` (
 
 LOCK TABLES `tipo_prenda` WRITE;
 /*!40000 ALTER TABLE `tipo_prenda` DISABLE KEYS */;
-INSERT INTO `tipo_prenda` VALUES (1,'Camiseta compresión',1),(2,'Camisa manga corta',1),(3,'Camisa Oversize',1),(4,'Camisa manga larga',1),(5,'Jogger',1),(6,'Hoodie',1),(7,'Chamarra',1),(8,'Short mujer',1),(9,'Tank top mujer',1),(10,'Sport bra',1),(11,'Legging',1),(12,'No prenda',0);
+INSERT INTO `tipo_prenda` VALUES (1,'Camiseta compresión',1),(2,'Camisa manga corta',1),(3,'Camisa Oversize',1),(4,'Camisa manga larga',1),(5,'Jogger',1),(6,'Hoodie',1),(7,'Chamarra',1),(8,'Short mujer',1),(9,'Tank top mujer',1),(10,'Sport bra',1),(11,'Legging',1),(12,'No prenda',0),(13,'Pants',1),(14,'Jacket',1);
 /*!40000 ALTER TABLE `tipo_prenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1083,14 +1164,15 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `id`,
  1 AS `folio`,
  1 AS `fecha_pedido`,
- 1 AS `proveedor`,
+ 1 AS `fecha_estimada`,
+ 1 AS `fecha_recepcion`,
  1 AS `estado`,
  1 AS `guia_envio`,
- 1 AS `fecha_envio`,
- 1 AS `fecha_recepcion`,
  1 AS `monto_total_usd`,
+ 1 AS `notas`,
+ 1 AS `proveedor`,
+ 1 AS `socio_comprador`,
  1 AS `total_piezas`,
- 1 AS `skus_distintos`,
  1 AS `dias_desde_pedido`,
  1 AS `alerta_retraso`*/;
 SET character_set_client = @saved_cs_client;
@@ -1497,7 +1579,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = latin1_swedish_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `v_pedido_orden_resumen` AS select `po`.`id` AS `id`,`po`.`folio` AS `folio`,`po`.`fecha_pedido` AS `fecha_pedido`,`po`.`proveedor` AS `proveedor`,`po`.`estado` AS `estado`,`po`.`guia_envio` AS `guia_envio`,`po`.`fecha_envio` AS `fecha_envio`,`po`.`fecha_recepcion` AS `fecha_recepcion`,`po`.`monto_total_usd` AS `monto_total_usd`,coalesce(sum(`pol`.`cantidad`),0) AS `total_piezas`,coalesce(count(distinct `pol`.`sku_id`),0) AS `skus_distintos`,(to_days(curdate()) - to_days(`po`.`fecha_pedido`)) AS `dias_desde_pedido`,(case when ((`po`.`estado` = 'EN_TRANSITO') and ((to_days(curdate()) - to_days(`po`.`fecha_envio`)) > 30)) then true else false end) AS `alerta_retraso` from (`pedido_orden` `po` left join `pedido_orden_linea` `pol` on((`pol`.`pedido_orden_id` = `po`.`id`))) group by `po`.`id` */;
+/*!50001 VIEW `v_pedido_orden_resumen` AS select `p`.`id` AS `id`,`p`.`folio` AS `folio`,`p`.`fecha_pedido` AS `fecha_pedido`,`p`.`fecha_estimada` AS `fecha_estimada`,`p`.`fecha_recepcion` AS `fecha_recepcion`,`p`.`estado` AS `estado`,`p`.`tracking` AS `guia_envio`,`p`.`costo_estimado_usd` AS `monto_total_usd`,`p`.`notas` AS `notas`,`prov`.`nombre` AS `proveedor`,`s`.`nombre` AS `socio_comprador`,coalesce(sum(`pp`.`cantidad_pedida`),0) AS `total_piezas`,(to_days(curdate()) - to_days(`p`.`fecha_pedido`)) AS `dias_desde_pedido`,(case when ((`p`.`estado` in ('PENDIENTE','EN_TRANSITO')) and ((to_days(curdate()) - to_days(`p`.`fecha_pedido`)) > 30)) then 1 else 0 end) AS `alerta_retraso` from (((`pedido` `p` join `proveedor` `prov` on((`prov`.`id` = `p`.`proveedor_id`))) left join `socio` `s` on((`s`.`id` = `p`.`socio_comprador_id`))) left join `pedido_pieza` `pp` on((`pp`.`pedido_id` = `p`.`id`))) group by `p`.`id`,`p`.`folio`,`p`.`fecha_pedido`,`p`.`fecha_estimada`,`p`.`fecha_recepcion`,`p`.`estado`,`p`.`tracking`,`p`.`costo_estimado_usd`,`p`.`notas`,`prov`.`nombre`,`s`.`nombre` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1583,107 +1665,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-30  4:38:05
--- Migración 001: Sistema completo de pedidos con tracking
--- Fecha: 2026-07-30
--- Descripción: Agrega tablas pedido, pedido_pieza y vista v_pedido_orden_resumen
-
--- ============================================================
--- TABLA: pedido
--- ============================================================
--- Pedidos a proveedores con tracking de estados
-
-CREATE TABLE IF NOT EXISTS pedido (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  folio VARCHAR(40) NULL,
-  proveedor_id SMALLINT NOT NULL,
-  socio_comprador_id SMALLINT NULL,
-  fecha_pedido DATE NOT NULL,
-  fecha_estimada DATE NULL,
-  fecha_recepcion DATE NULL,
-  estado ENUM('PENDIENTE', 'EN_TRANSITO', 'RECIBIDO', 'CANCELADO') NOT NULL DEFAULT 'PENDIENTE',
-  tracking VARCHAR(100) NULL,
-  costo_estimado_usd DECIMAL(12,2) NULL,
-  notas TEXT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-
-  CONSTRAINT fk_pedido_tracking_proveedor FOREIGN KEY (proveedor_id) REFERENCES proveedor(id),
-  CONSTRAINT fk_pedido_tracking_socio FOREIGN KEY (socio_comprador_id) REFERENCES socio(id),
-
-  INDEX idx_pedido_estado (estado),
-  INDEX idx_pedido_fecha (fecha_pedido),
-  INDEX idx_pedido_proveedor (proveedor_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ============================================================
--- TABLA: pedido_pieza
--- ============================================================
--- Líneas/productos dentro de un pedido
-
-CREATE TABLE IF NOT EXISTS pedido_pieza (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  pedido_id INT NOT NULL,
-  marca_id SMALLINT NOT NULL,
-  tipo_prenda_id SMALLINT NOT NULL,
-  sku_id INT NULL,
-  descripcion VARCHAR(255) NOT NULL,
-  cantidad_pedida INT NOT NULL DEFAULT 1,
-  cantidad_recibida INT NOT NULL DEFAULT 0,
-  talla VARCHAR(20) NULL,
-  color VARCHAR(60) NULL,
-  costo_unitario_usd DECIMAL(10,2) NULL,
-  notas TEXT NULL,
-
-  CONSTRAINT fk_pedido_pieza_pedido FOREIGN KEY (pedido_id) REFERENCES pedido(id) ON DELETE CASCADE,
-  CONSTRAINT fk_pedido_pieza_marca FOREIGN KEY (marca_id) REFERENCES marca(id),
-  CONSTRAINT fk_pedido_pieza_tipo FOREIGN KEY (tipo_prenda_id) REFERENCES tipo_prenda(id),
-  CONSTRAINT fk_pedido_pieza_sku FOREIGN KEY (sku_id) REFERENCES sku(id),
-
-  INDEX idx_pedido_pieza_pedido (pedido_id),
-  INDEX idx_pedido_pieza_sku (sku_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ============================================================
--- VISTA: v_pedido_orden_resumen
--- ============================================================
--- Resumen de pedidos con totales y alertas
-
-CREATE OR REPLACE VIEW v_pedido_orden_resumen AS
-SELECT
-  p.id,
-  p.folio,
-  p.fecha_pedido,
-  p.fecha_estimada,
-  p.fecha_recepcion,
-  p.estado,
-  p.tracking AS guia_envio,
-  p.costo_estimado_usd AS monto_total_usd,
-  p.notas,
-  prov.nombre AS proveedor,
-  s.nombre AS socio_comprador,
-  COALESCE(SUM(pp.cantidad_pedida), 0) AS total_piezas,
-  DATEDIFF(CURRENT_DATE, p.fecha_pedido) AS dias_desde_pedido,
-  -- Alerta de retraso: más de 30 días desde pedido y no recibido
-  CASE
-    WHEN p.estado IN ('PENDIENTE', 'EN_TRANSITO')
-         AND DATEDIFF(CURRENT_DATE, p.fecha_pedido) > 30
-    THEN 1
-    ELSE 0
-  END AS alerta_retraso
-FROM pedido p
-JOIN proveedor prov ON prov.id = p.proveedor_id
-LEFT JOIN socio s ON s.id = p.socio_comprador_id
-LEFT JOIN pedido_pieza pp ON pp.pedido_id = p.id
-GROUP BY
-  p.id,
-  p.folio,
-  p.fecha_pedido,
-  p.fecha_estimada,
-  p.fecha_recepcion,
-  p.estado,
-  p.tracking,
-  p.costo_estimado_usd,
-  p.notas,
-  prov.nombre,
-  s.nombre;
+-- Dump completed on 2026-07-30 21:21:28
