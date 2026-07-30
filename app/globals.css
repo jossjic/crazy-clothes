@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-stone-200;
+  }
+  body {
+    @apply font-sans;
+  }
+  input, select, textarea {
+    @apply text-sm;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-150 ease-smooth disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-accent-600 text-white hover:bg-accent-700 active:bg-accent-700 shadow-sm hover:shadow;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-stone-700 border border-stone-300 hover:bg-stone-50 hover:border-stone-400;
+  }
+  .btn-ghost {
+    @apply btn text-stone-600 hover:bg-stone-100 hover:text-stone-900;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 shadow-sm;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 rounded-lg border border-stone-300 bg-white text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-shadow duration-150;
+  }
+  .label {
+    @apply block text-sm font-medium text-stone-700 mb-1.5;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border border-stone-200 shadow-card;
+  }
+  .card-header {
+    @apply px-6 py-4 border-b border-stone-200;
+  }
+  .card-body {
+    @apply p-6;
+  }
+
+  .table-wrapper {
+    @apply overflow-x-auto rounded-lg border border-stone-200;
+  }
+  .table {
+    @apply w-full text-sm;
+  }
+  .table thead {
+    @apply bg-stone-50 border-b border-stone-200;
+  }
+  .table th {
+    @apply px-4 py-3 text-left font-semibold text-stone-700 text-xs uppercase tracking-wider;
+  }
+  .table td {
+    @apply px-4 py-3 border-t border-stone-100;
+  }
+  .table tbody tr {
+    @apply hover:bg-stone-50 transition-colors duration-100;
+  }
+}
