@@ -44,6 +44,9 @@ export default async function MovimientosPage({ searchParams }) {
   const sinSku = todasSinSku.filter(p => p.estado === 'Pendiente catalogar')
   const perdidas = todasSinSku.filter(p => p.estado === 'Pérdida operativa')
 
+  console.log('DEBUG todasSinSku:', todasSinSku.length)
+  console.log('DEBUG perdidas:', perdidas.length, perdidas.map(p => p.descripcion))
+
   // Estadísticas
   const stats = {
     conStock: movimientos.filter(m => Number(m.disponible) > 0).length,
