@@ -1101,6 +1101,30 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `v_dashboard_inventario`
+--
+
+DROP TABLE IF EXISTS `v_dashboard_inventario`;
+/*!50001 DROP VIEW IF EXISTS `v_dashboard_inventario`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_dashboard_inventario` AS SELECT 
+ 1 AS `tipo`,
+ 1 AS `identificador`,
+ 1 AS `nombre`,
+ 1 AS `marca`,
+ 1 AS `tipo_prenda`,
+ 1 AS `talla`,
+ 1 AS `color`,
+ 1 AS `entradas`,
+ 1 AS `salidas`,
+ 1 AS `disponible`,
+ 1 AS `piezas_vinculadas`,
+ 1 AS `estado`,
+ 1 AS `notas`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary view structure for view `v_deuda_balance`
 --
 
@@ -1130,6 +1154,86 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `cruce_mxn`,
  1 AS `mercancia_mxn`,
  1 AS `total_mxn`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_movimientos_detalle`
+--
+
+DROP TABLE IF EXISTS `v_movimientos_detalle`;
+/*!50001 DROP VIEW IF EXISTS `v_movimientos_detalle`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_movimientos_detalle` AS SELECT 
+ 1 AS `movimiento_id`,
+ 1 AS `fecha`,
+ 1 AS `tipo`,
+ 1 AS `sku_codigo`,
+ 1 AS `producto`,
+ 1 AS `marca`,
+ 1 AS `talla`,
+ 1 AS `color`,
+ 1 AS `cantidad`,
+ 1 AS `valor`,
+ 1 AS `moneda`,
+ 1 AS `venta_id`,
+ 1 AS `venta_folio`,
+ 1 AS `pieza_id`,
+ 1 AS `pieza_descripcion`,
+ 1 AS `paquete_guia`,
+ 1 AS `cruce_folio`,
+ 1 AS `categoria`,
+ 1 AS `notas`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_movimientos_sku`
+--
+
+DROP TABLE IF EXISTS `v_movimientos_sku`;
+/*!50001 DROP VIEW IF EXISTS `v_movimientos_sku`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_movimientos_sku` AS SELECT 
+ 1 AS `sku_id`,
+ 1 AS `codigo`,
+ 1 AS `producto`,
+ 1 AS `marca`,
+ 1 AS `tipo_prenda`,
+ 1 AS `talla`,
+ 1 AS `color`,
+ 1 AS `total_entradas`,
+ 1 AS `total_salidas`,
+ 1 AS `disponible`,
+ 1 AS `reservado`,
+ 1 AS `piezas_vinculadas`,
+ 1 AS `precio_lista_mxn`,
+ 1 AS `estado_stock`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_movimientos_sku_valores`
+--
+
+DROP TABLE IF EXISTS `v_movimientos_sku_valores`;
+/*!50001 DROP VIEW IF EXISTS `v_movimientos_sku_valores`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_movimientos_sku_valores` AS SELECT 
+ 1 AS `sku_id`,
+ 1 AS `codigo`,
+ 1 AS `producto`,
+ 1 AS `marca`,
+ 1 AS `talla`,
+ 1 AS `color`,
+ 1 AS `total_entradas`,
+ 1 AS `total_salidas`,
+ 1 AS `costo_total_usd`,
+ 1 AS `venta_total_mxn`,
+ 1 AS `disponible`,
+ 1 AS `reservado`,
+ 1 AS `estado_stock`,
+ 1 AS `precio_lista_mxn`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1217,6 +1321,30 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `factor`,
  1 AS `factor_total`,
  1 AS `origen_factor`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `v_piezas_sin_sku`
+--
+
+DROP TABLE IF EXISTS `v_piezas_sin_sku`;
+/*!50001 DROP VIEW IF EXISTS `v_piezas_sin_sku`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `v_piezas_sin_sku` AS SELECT 
+ 1 AS `pieza_id`,
+ 1 AS `guia`,
+ 1 AS `cruce`,
+ 1 AS `descripcion`,
+ 1 AS `marca`,
+ 1 AS `tipo_prenda`,
+ 1 AS `cantidad`,
+ 1 AS `costo_usd`,
+ 1 AS `destino`,
+ 1 AS `estado`,
+ 1 AS `notas`,
+ 1 AS `fecha_llegada`,
+ 1 AS `paqueteria`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1513,6 +1641,24 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `v_dashboard_inventario`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_dashboard_inventario`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_dashboard_inventario` AS select 'CON_SKU' AS `tipo`,`v_movimientos_sku`.`codigo` AS `identificador`,`v_movimientos_sku`.`producto` AS `nombre`,`v_movimientos_sku`.`marca` AS `marca`,`v_movimientos_sku`.`tipo_prenda` AS `tipo_prenda`,`v_movimientos_sku`.`talla` AS `talla`,`v_movimientos_sku`.`color` AS `color`,`v_movimientos_sku`.`total_entradas` AS `entradas`,`v_movimientos_sku`.`total_salidas` AS `salidas`,`v_movimientos_sku`.`disponible` AS `disponible`,`v_movimientos_sku`.`piezas_vinculadas` AS `piezas_vinculadas`,`v_movimientos_sku`.`estado_stock` AS `estado`,NULL AS `notas` from `v_movimientos_sku` union all select 'SIN_SKU' AS `tipo`,`v_piezas_sin_sku`.`guia` AS `identificador`,`v_piezas_sin_sku`.`descripcion` AS `nombre`,`v_piezas_sin_sku`.`marca` AS `marca`,`v_piezas_sin_sku`.`tipo_prenda` AS `tipo_prenda`,NULL AS `talla`,NULL AS `color`,NULL AS `entradas`,NULL AS `salidas`,`v_piezas_sin_sku`.`cantidad` AS `disponible`,NULL AS `piezas_vinculadas`,`v_piezas_sin_sku`.`estado` AS `estado`,`v_piezas_sin_sku`.`notas` AS `notas` from `v_piezas_sin_sku` order by `tipo` desc,`marca`,`nombre` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `v_deuda_balance`
 --
 
@@ -1544,6 +1690,60 @@ UNLOCK TABLES;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `v_deuda_personal_por_socio` AS select `s`.`nombre` AS `socio`,count(`pc`.`pieza_id`) AS `n_piezas`,sum(`pc`.`cruce_pieza_mxn`) AS `cruce_mxn`,sum(`pc`.`costo_prenda_mxn`) AS `mercancia_mxn`,sum(`pc`.`costo_total_mxn`) AS `total_mxn` from (`v_pieza_costo` `pc` join `socio` `s` on((`s`.`id` = `pc`.`socio_id`))) where (`pc`.`destino` = 'PERSONAL') group by `s`.`nombre` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_movimientos_detalle`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_movimientos_detalle`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_movimientos_detalle` AS select `mov`.`id` AS `movimiento_id`,`mov`.`fecha` AS `fecha`,`mov`.`tipo` AS `tipo`,`s`.`codigo` AS `sku_codigo`,`pr`.`nombre` AS `producto`,`m`.`nombre` AS `marca`,`s`.`talla` AS `talla`,`s`.`color` AS `color`,`mov`.`cantidad` AS `cantidad`,(case when (`mov`.`tipo` in ('COMPRA','INICIAL','AJUSTE_MAS')) then (coalesce(`pz`.`costo_usd`,0) * `mov`.`cantidad`) when (`mov`.`tipo` = 'VENTA') then (coalesce(`vl`.`precio_unitario_mxn`,`s`.`precio_lista_mxn`,0) * `mov`.`cantidad`) else 0 end) AS `valor`,(case when (`mov`.`tipo` in ('COMPRA','INICIAL','AJUSTE_MAS')) then 'USD' when (`mov`.`tipo` = 'VENTA') then 'MXN' else NULL end) AS `moneda`,`mov`.`venta_id` AS `venta_id`,`v`.`folio` AS `venta_folio`,`mov`.`pieza_id` AS `pieza_id`,`pz`.`descripcion` AS `pieza_descripcion`,`pq`.`guia` AS `paquete_guia`,`c`.`folio` AS `cruce_folio`,(case when (`mov`.`tipo` in ('COMPRA','INICIAL','AJUSTE_MAS','DEVOLUCION','TRASLADO_ENTRADA')) then 'ENTRADA' when (`mov`.`tipo` in ('VENTA','AJUSTE_MENOS','TRASLADO_SALIDA')) then 'SALIDA' else 'OTRO' end) AS `categoria`,`mov`.`notas` AS `notas` from ((((((((`movimiento` `mov` join `sku` `s` on((`s`.`id` = `mov`.`sku_id`))) join `producto` `pr` on((`pr`.`id` = `s`.`producto_id`))) join `marca` `m` on((`m`.`id` = `pr`.`marca_id`))) left join `pieza` `pz` on((`pz`.`id` = `mov`.`pieza_id`))) left join `paquete` `pq` on((`pq`.`id` = `pz`.`paquete_id`))) left join `cruce` `c` on((`c`.`id` = `pq`.`cruce_id`))) left join `venta` `v` on((`v`.`id` = `mov`.`venta_id`))) left join `venta_linea` `vl` on(((`vl`.`venta_id` = `v`.`id`) and (`vl`.`sku_id` = `s`.`id`)))) order by `mov`.`fecha` desc,`mov`.`id` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_movimientos_sku`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_movimientos_sku`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_movimientos_sku` AS select `s`.`id` AS `sku_id`,`s`.`codigo` AS `codigo`,`pr`.`nombre` AS `producto`,`m`.`nombre` AS `marca`,`tp`.`nombre` AS `tipo_prenda`,`s`.`talla` AS `talla`,`s`.`color` AS `color`,coalesce(sum((case when (`mov`.`tipo` in ('COMPRA','INICIAL','AJUSTE_MAS','DEVOLUCION')) then `mov`.`cantidad` else 0 end)),0) AS `total_entradas`,coalesce(sum((case when (`mov`.`tipo` in ('VENTA','AJUSTE_MENOS')) then `mov`.`cantidad` else 0 end)),0) AS `total_salidas`,`vs`.`disponible` AS `disponible`,`vs`.`reservado` AS `reservado`,(select count(0) from `pieza` `pz` where (`pz`.`sku_id` = `s`.`id`)) AS `piezas_vinculadas`,`s`.`precio_lista_mxn` AS `precio_lista_mxn`,(case when (`vs`.`disponible` > 0) then 'Disponible' when (`vs`.`disponible` = 0) then 'Sin stock' when (`vs`.`disponible` < 0) then 'Stock negativo' end) AS `estado_stock` from (((((`sku` `s` join `producto` `pr` on((`pr`.`id` = `s`.`producto_id`))) join `marca` `m` on((`m`.`id` = `pr`.`marca_id`))) join `tipo_prenda` `tp` on((`tp`.`id` = `pr`.`tipo_prenda_id`))) left join `movimiento` `mov` on((`mov`.`sku_id` = `s`.`id`))) left join `v_stock` `vs` on((`vs`.`sku_id` = `s`.`id`))) group by `s`.`id`,`s`.`codigo`,`pr`.`nombre`,`m`.`nombre`,`tp`.`nombre`,`s`.`talla`,`s`.`color`,`vs`.`disponible`,`vs`.`reservado`,`s`.`precio_lista_mxn` order by `m`.`nombre`,`pr`.`nombre`,`s`.`talla`,`s`.`color` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `v_movimientos_sku_valores`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_movimientos_sku_valores`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_movimientos_sku_valores` AS select `s`.`id` AS `sku_id`,`s`.`codigo` AS `codigo`,`pr`.`nombre` AS `producto`,`m`.`nombre` AS `marca`,`s`.`talla` AS `talla`,`s`.`color` AS `color`,coalesce(sum((case when (`mov`.`tipo` in ('COMPRA','INICIAL','AJUSTE_MAS','DEVOLUCION')) then `mov`.`cantidad` else 0 end)),0) AS `total_entradas`,coalesce(sum((case when (`mov`.`tipo` in ('VENTA','AJUSTE_MENOS')) then `mov`.`cantidad` else 0 end)),0) AS `total_salidas`,coalesce(sum((case when (`mov`.`tipo` in ('COMPRA','INICIAL','AJUSTE_MAS')) then (`pz`.`costo_usd` * `mov`.`cantidad`) else 0 end)),0) AS `costo_total_usd`,coalesce(sum((case when (`mov`.`tipo` = 'VENTA') then (`vl`.`precio_unitario_mxn` * `mov`.`cantidad`) else 0 end)),0) AS `venta_total_mxn`,`vs`.`disponible` AS `disponible`,`vs`.`reservado` AS `reservado`,(case when (`vs`.`disponible` > 0) then 'Disponible' when (`vs`.`disponible` = 0) then 'Sin stock' when (`vs`.`disponible` < 0) then 'Stock negativo' end) AS `estado_stock`,`s`.`precio_lista_mxn` AS `precio_lista_mxn` from ((((((`sku` `s` join `producto` `pr` on((`pr`.`id` = `s`.`producto_id`))) join `marca` `m` on((`m`.`id` = `pr`.`marca_id`))) left join `movimiento` `mov` on((`mov`.`sku_id` = `s`.`id`))) left join `pieza` `pz` on((`pz`.`id` = `mov`.`pieza_id`))) left join `venta_linea` `vl` on((`vl`.`sku_id` = `s`.`id`))) left join `v_stock` `vs` on((`vs`.`sku_id` = `s`.`id`))) group by `s`.`id`,`s`.`codigo`,`pr`.`nombre`,`m`.`nombre`,`s`.`talla`,`s`.`color`,`vs`.`disponible`,`vs`.`reservado`,`s`.`precio_lista_mxn` order by `m`.`nombre`,`pr`.`nombre`,`s`.`talla`,`s`.`color` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1621,6 +1821,24 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `v_piezas_sin_sku`
+--
+
+/*!50001 DROP VIEW IF EXISTS `v_piezas_sin_sku`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = latin1 */;
+/*!50001 SET character_set_results     = latin1 */;
+/*!50001 SET collation_connection      = latin1_swedish_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `v_piezas_sin_sku` AS select `pz`.`id` AS `pieza_id`,`pq`.`guia` AS `guia`,`c`.`folio` AS `cruce`,`pz`.`descripcion` AS `descripcion`,`m`.`nombre` AS `marca`,`tp`.`nombre` AS `tipo_prenda`,`pz`.`cantidad` AS `cantidad`,`pz`.`costo_usd` AS `costo_usd`,`pz`.`destino` AS `destino`,(case when ((`pz`.`notas` like '%PÉRDIDA%') or (`pz`.`notas` like '%PERDIDA%')) then 'Pérdida operativa' else 'Pendiente catalogar' end) AS `estado`,`pz`.`notas` AS `notas`,`pq`.`fecha_llegada` AS `fecha_llegada`,`paqr`.`nombre` AS `paqueteria` from (((((`pieza` `pz` join `paquete` `pq` on((`pq`.`id` = `pz`.`paquete_id`))) left join `cruce` `c` on((`c`.`id` = `pq`.`cruce_id`))) join `marca` `m` on((`m`.`id` = `pz`.`marca_id`))) join `tipo_prenda` `tp` on((`tp`.`id` = `pz`.`tipo_prenda_id`))) left join `paqueteria` `paqr` on((`paqr`.`id` = `pq`.`paqueteria_id`))) where ((`pz`.`destino` = 'NEGOCIO') and (`pz`.`sku_id` is null)) order by (case when ((`pz`.`notas` like '%PÉRDIDA%') or (`pz`.`notas` like '%PERDIDA%')) then 1 else 0 end),`c`.`folio` desc,`pq`.`guia` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `v_salud_factores`
 --
 
@@ -1665,4 +1883,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-30 21:42:25
+-- Dump completed on 2026-07-30 21:55:16

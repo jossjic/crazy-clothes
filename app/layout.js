@@ -1,6 +1,6 @@
 import './globals.css'
 import Link from 'next/link'
-import { Package, ShoppingCart, Archive, BarChart3, DollarSign, PieChart, Banknote, Truck, Calendar, Settings, List } from 'lucide-react'
+import { Package, ShoppingCart, Archive, BarChart3, DollarSign, PieChart, Banknote, Truck, Calendar, Settings, List, TrendingUp } from 'lucide-react'
 
 export const metadata = {
   title: 'Crazy Clothes',
@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
               <NavLink href="/ventas" icon={ShoppingCart}>Ventas</NavLink>
               <NavLink href="/compras" icon={Package}>Compras</NavLink>
               <NavLink href="/pedidos" icon={Truck}>Pedidos</NavLink>
+              <NavLink href="/movimientos" icon={TrendingUp}>Movimientos</NavLink>
               <NavLink href="/comisiones" icon={DollarSign}>Comisiones</NavLink>
               <NavLink href="/capital" icon={PieChart}>Capital</NavLink>
               <NavLink href="/deudas" icon={Banknote}>Deudas</NavLink>
