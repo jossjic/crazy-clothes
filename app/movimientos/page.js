@@ -15,17 +15,17 @@ export default async function MovimientosPage({ searchParams }) {
       m.nombre AS marca,
       s.talla,
       s.color,
-      vs.stock_inicial + vs.entradas AS total_entradas,
-      vs.salidas AS total_salidas,
+      COALESCE(vs.stock_inicial, 0) + COALESCE(vs.entradas, 0) AS total_entradas,
+      COALESCE(vs.salidas, 0) AS total_salidas,
       COALESCE(SUM(DISTINCT vpc.costo_total_mxn), 0) AS costo_total_mxn,
       COALESCE((SELECT SUM(vl.cantidad * vl.precio_unitario_mxn)
                 FROM venta_linea vl WHERE vl.sku_id = s.id), 0) AS venta_total_mxn,
-      vs.disponible,
-      vs.reservado,
+      COALESCE(vs.disponible, 0) AS disponible,
+      COALESCE(vs.reservado, 0) AS reservado,
       CASE
-        WHEN vs.disponible > 0 THEN 'Disponible'
-        WHEN vs.disponible = 0 THEN 'Sin stock'
-        WHEN vs.disponible < 0 THEN 'Stock negativo'
+        WHEN COALESCE(vs.disponible, 0) > 0 THEN 'Disponible'
+        WHEN COALESCE(vs.disponible, 0) = 0 THEN 'Sin stock'
+        WHEN COALESCE(vs.disponible, 0) < 0 THEN 'Stock negativo'
       END AS estado_stock
     FROM sku s
     JOIN producto pr ON pr.id = s.producto_id
@@ -73,39 +73,63 @@ export default async function MovimientosPage({ searchParams }) {
       {/* Stats Cards */}
       <div className="grid grid-cols-5 gap-4">
         <Link href="/movimientos?filtro=con-stock"
-              className={`card card-body transition-shadow ${filtro === 'con-stock' ? 'ring-2 ring-green-500' : 'hover:shadow-md'}`}>
+              className={`card card-body transition-all cursor-pointer ${
+                filtro === 'con-stock'
+                  ? 'bg-green-600 text-white shadow-lg'
+                  : 'hover:shadow-md hover:scale-105'
+              }`}>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-stone-500">Con Stock</p>
-              <p className="text-2xl font-semibold text-green-600">{stats.conStock}</p>
+              <p className={`text-sm ${filtro === 'con-stock' ? 'text-green-100' : 'text-stone-500'}`}>
+                Con Stock
+              </p>
+              <p className={`text-2xl font-semibold ${filtro === 'con-stock' ? 'text-white' : 'text-green-600'}`}>
+                {stats.conStock}
+              </p>
             </div>
-            <TrendingUp className="w-8 h-8 text-green-600" />
+            <TrendingUp className={`w-8 h-8 ${filtro === 'con-stock' ? 'text-white' : 'text-green-600'}`} />
           </div>
         </Link>
 
         <Link href="/movimientos?filtro=sin-stock"
-              className={`card card-body transition-shadow ${filtro === 'sin-stock' ? 'ring-2 ring-stone-500' : 'hover:shadow-md'}`}>
+              className={`card card-body transition-all cursor-pointer ${
+                filtro === 'sin-stock'
+                  ? 'bg-stone-600 text-white shadow-lg'
+                  : 'hover:shadow-md hover:scale-105'
+              }`}>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-stone-500">Sin Stock</p>
-              <p className="text-2xl font-semibold text-stone-600">{stats.sinStock}</p>
+              <p className={`text-sm ${filtro === 'sin-stock' ? 'text-stone-100' : 'text-stone-500'}`}>
+                Sin Stock
+              </p>
+              <p className={`text-2xl font-semibold ${filtro === 'sin-stock' ? 'text-white' : 'text-stone-600'}`}>
+                {stats.sinStock}
+              </p>
             </div>
-            <TrendingDown className="w-8 h-8 text-stone-600" />
+            <TrendingDown className={`w-8 h-8 ${filtro === 'sin-stock' ? 'text-white' : 'text-stone-600'}`} />
           </div>
         </Link>
 
-        {stats.negativos > 0 && (
-          <Link href="/movimientos?filtro=negativos"
-                className={`card card-body bg-red-50 transition-shadow ${filtro === 'negativos' ? 'ring-2 ring-red-500' : 'hover:shadow-md'}`}>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-red-600">Stock Negativo</p>
-                <p className="text-2xl font-semibold text-red-700">{stats.negativos}</p>
-              </div>
-              <AlertTriangle className="w-8 h-8 text-red-600" />
+        <Link href="/movimientos?filtro=negativos"
+              className={`card card-body transition-all cursor-pointer ${
+                filtro === 'negativos'
+                  ? 'bg-red-600 text-white shadow-lg'
+                  : stats.negativos > 0
+                    ? 'bg-red-50 hover:shadow-md hover:scale-105'
+                    : 'opacity-50 pointer-events-none'
+              }`}>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className={`text-sm ${filtro === 'negativos' ? 'text-red-100' : 'text-red-600'}`}>
+                Stock Negativo
+              </p>
+              <p className={`text-2xl font-semibold ${filtro === 'negativos' ? 'text-white' : 'text-red-700'}`}>
+                {stats.negativos}
+              </p>
             </div>
-          </Link>
-        )}
+            <AlertTriangle className={`w-8 h-8 ${filtro === 'negativos' ? 'text-white' : 'text-red-600'}`} />
+          </div>
+        </Link>
 
         <div className="card card-body">
           <div className="flex items-center justify-between">
