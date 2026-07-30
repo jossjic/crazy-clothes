@@ -7,6 +7,8 @@ import FormAjuste from './FormAjuste'
 import ActionButton from '@/components/ActionButton'
 import { borrarSku } from '@/lib/actions'
 
+export const dynamic = 'force-dynamic'
+
 export default async function InventarioPage({ searchParams }) {
   const buscar = searchParams.q || ''
   const marca = searchParams.marca || ''

@@ -3,6 +3,8 @@ import { Plus, Package, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import FormCruce from './FormCruce'
 
+export const dynamic = 'force-dynamic'
+
 export default async function ComprasPage() {
   const cruces = await q(
     `SELECT c.*, COUNT(DISTINCT pq.id) n_paquetes, COUNT(DISTINCT pz.id) n_piezas,

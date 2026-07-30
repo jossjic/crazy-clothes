@@ -4,6 +4,8 @@ import Link from 'next/link'
 import ActionButton from '@/components/ActionButton'
 import { borrarVenta } from '@/lib/actions'
 
+export const dynamic = 'force-dynamic'
+
 export default async function VentasPage() {
   const ventas = await q(
     `SELECT v.*,
