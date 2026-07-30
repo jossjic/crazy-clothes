@@ -89,7 +89,7 @@ export default async function ReportesPage() {
   const utilidadNetaResult = await q(`
     SELECT COALESCE(SUM(
       (vl.cantidad * vl.precio_unitario_mxn) -
-      (vl.cantidad * COALESCE(vpc.costo_total_mxn, sc.costo_total_usd)) -
+      (vl.cantidad * COALESCE(vpc.costo_total_mxn, 0)) -
       (SELECT COALESCE(SUM(ct.pct * vl.cantidad * vl.precio_unitario_mxn), 0)
        FROM venta_rol vr
        JOIN comision_tarifa ct ON vr.rol_venta_id = ct.rol_venta_id
