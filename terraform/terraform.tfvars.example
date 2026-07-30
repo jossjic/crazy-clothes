@@ -1,0 +1,24 @@
+# Copia este archivo a terraform.tfvars y ajusta los valores
+
+aws_region = "us-east-1"
+environment = "production"
+
+# AMI ID para Amazon Linux 2023 en us-east-1
+# Encuentra el más reciente aquí: https://console.aws.amazon.com/ec2/v2/home#AMICatalog
+ami_id = "ami-0c55b159cbfafe1f0"
+
+# Tipos de instancia
+db_instance_type  = "t3.small"   # 2 vCPU, 2 GB RAM - ~$15/mes
+web_instance_type = "t3.micro"   # 2 vCPU, 1 GB RAM - ~$8/mes cada una
+
+# Auto Scaling (cuántos web servers)
+min_web_instances     = 2
+max_web_instances     = 4
+desired_web_instances = 2
+
+# SSH Key (genera una con: ssh-keygen -t rsa -b 4096 -f ~/.ssh/crazy-clothes)
+ssh_public_key_path = "~/.ssh/crazy-clothes.pub"
+
+# Tu IP para acceso al bastion (encuentra tu IP en: https://ifconfig.me)
+# Formato: "X.X.X.X/32"
+your_ip_cidr = "0.0.0.0/0"  # CAMBIA ESTO por seguridad
