@@ -5,7 +5,8 @@ import Link from 'next/link'
 export const dynamic = 'force-dynamic'
 
 export default async function MovimientosPage({ searchParams }) {
-  const filtro = searchParams.filtro || 'todos'
+  const params = await searchParams
+  const filtro = params?.filtro || 'todos'
   // Vista completa de movimientos por SKU con costos reales
   const movimientos = await q(`
     SELECT
@@ -45,9 +46,9 @@ export default async function MovimientosPage({ searchParams }) {
 
   // Estadísticas
   const stats = {
-    conStock: movimientos.filter(m => m.disponible > 0).length,
-    sinStock: movimientos.filter(m => m.disponible === 0).length,
-    negativos: movimientos.filter(m => m.disponible < 0).length,
+    conStock: movimientos.filter(m => Number(m.disponible) > 0).length,
+    sinStock: movimientos.filter(m => Number(m.disponible) === 0).length,
+    negativos: movimientos.filter(m => Number(m.disponible) < 0).length,
     pendientes: sinSku.length,
     perdidas: perdidas.length
   }
@@ -55,9 +56,9 @@ export default async function MovimientosPage({ searchParams }) {
   // Filtrar movimientos según el filtro activo
   const movimientosFiltrados = (() => {
     switch(filtro) {
-      case 'con-stock': return movimientos.filter(m => m.disponible > 0)
-      case 'sin-stock': return movimientos.filter(m => m.disponible === 0)
-      case 'negativos': return movimientos.filter(m => m.disponible < 0)
+      case 'con-stock': return movimientos.filter(m => Number(m.disponible) > 0)
+      case 'sin-stock': return movimientos.filter(m => Number(m.disponible) === 0)
+      case 'negativos': return movimientos.filter(m => Number(m.disponible) < 0)
       default: return movimientos
     }
   })()
@@ -228,8 +229,10 @@ export default async function MovimientosPage({ searchParams }) {
                 </tr>
               </thead>
               <tbody>
-                {movimientosFiltrados.map(m => (
-                  <tr key={m.sku_id} className={m.disponible < 0 ? 'bg-red-50' : ''}>
+                {movimientosFiltrados.map(m => {
+                  const disp = Number(m.disponible)
+                  return (
+                  <tr key={m.sku_id} className={disp < 0 ? 'bg-red-50' : ''}>
                     <td className="font-mono text-xs">{m.codigo}</td>
                     <td>{m.producto}</td>
                     <td className="text-sm text-stone-600">{m.marca}</td>
@@ -245,11 +248,11 @@ export default async function MovimientosPage({ searchParams }) {
                     </td>
                     <td className="text-right font-semibold">
                       <span className={`inline-flex px-2 py-1 text-xs rounded ${
-                        m.disponible > 0 ? 'bg-green-100 text-green-700' :
-                        m.disponible < 0 ? 'bg-red-100 text-red-700' :
+                        disp > 0 ? 'bg-green-100 text-green-700' :
+                        disp < 0 ? 'bg-red-100 text-red-700' :
                         'bg-stone-100 text-stone-500'
                       }`}>
-                        {m.disponible}
+                        {disp}
                       </span>
                     </td>
                     <td>
@@ -262,7 +265,8 @@ export default async function MovimientosPage({ searchParams }) {
                       </span>
                     </td>
                   </tr>
-                ))}
+                  )
+                })}
               </tbody>
             </table>
           </div>
