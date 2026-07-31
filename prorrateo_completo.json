@@ -1,0 +1,833 @@
+{
+  "CONS9928546710": {
+    "fecha": "2026-01-01",
+    "total_usd": 2618.209999999999,
+    "paquetes": 2,
+    "piezas": [
+      {
+        "descripcion": "foundation cropped tee",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 36.0,
+        "guia": "CASI420785219434640109629005071033",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      },
+      {
+        "descripcion": "flagship track pants",
+        "destino": "NEGOCIO",
+        "factor": 1.4,
+        "precio_usd": 50.0,
+        "guia": "CASI420785219434640109629005071033",
+        "peso_relativo": 0.17073170731707318,
+        "costo_prorrateado_usd": 447.011463414634
+      },
+      {
+        "descripcion": "immortal killer joggers",
+        "destino": "NEGOCIO",
+        "factor": 1.4,
+        "precio_usd": 50.0,
+        "guia": "CASI420785219434640109629005071033",
+        "peso_relativo": 0.17073170731707318,
+        "costo_prorrateado_usd": 447.011463414634
+      },
+      {
+        "descripcion": "foundation cropped tee",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 36.0,
+        "guia": "CASI420785219434640109629005071033",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      },
+      {
+        "descripcion": "foundation cropped tee",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 36.0,
+        "guia": "CASI420785219434640109629005071033",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      },
+      {
+        "descripcion": "supervillain",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 38.0,
+        "guia": "CASI420785219434640109629005071033",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      },
+      {
+        "descripcion": "flagship track pants",
+        "destino": "NEGOCIO",
+        "factor": 1.4,
+        "precio_usd": 50.0,
+        "guia": "CASI420785219434640109629005071033",
+        "peso_relativo": 0.17073170731707318,
+        "costo_prorrateado_usd": 447.011463414634
+      },
+      {
+        "descripcion": "warrior",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 42.0,
+        "guia": "CASI420785219434640109629005034571",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      },
+      {
+        "descripcion": "warrior",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 42.0,
+        "guia": "CASI420785219434640109629005034571",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      },
+      {
+        "descripcion": "batman",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 48.0,
+        "guia": "CASI420785219434640109629005034571",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      },
+      {
+        "descripcion": "batman",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 48.0,
+        "guia": "CASI420785219434640109629005034571",
+        "peso_relativo": 0.06097560975609757,
+        "costo_prorrateado_usd": 159.64695121951215
+      }
+    ],
+    "suma_factores": 8.2
+  },
+  "CONS9943741515": {
+    "fecha": "2026-01-01",
+    "total_usd": 1274.58,
+    "paquetes": 3,
+    "piezas": [
+      {
+        "descripcion": "onyx hoodie",
+        "destino": "NEGOCIO",
+        "factor": 0.493,
+        "precio_usd": 57.6,
+        "guia": "CASI1Z08X89A0320538281",
+        "peso_relativo": 0.08997992334367585,
+        "costo_prorrateado_usd": 114.68661069538237
+      },
+      {
+        "descripcion": "onyx hoodie",
+        "destino": "NEGOCIO",
+        "factor": 0.493,
+        "precio_usd": 57.6,
+        "guia": "CASI1Z08X89A0320538281",
+        "peso_relativo": 0.08997992334367585,
+        "costo_prorrateado_usd": 114.68661069538237
+      },
+      {
+        "descripcion": "onyx hoodie",
+        "destino": "NEGOCIO",
+        "factor": 0.493,
+        "precio_usd": 57.6,
+        "guia": "CASI1Z08X89A0320538281",
+        "peso_relativo": 0.08997992334367585,
+        "costo_prorrateado_usd": 114.68661069538237
+      },
+      {
+        "descripcion": "demon slayer rengoku tee",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 42.0,
+        "guia": "CASI420785219400140109629002153594",
+        "peso_relativo": 0.09125752874612156,
+        "costo_prorrateado_usd": 116.31502098923161
+      },
+      {
+        "descripcion": "quarter zipup",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 55.0,
+        "guia": "CASI420785219400140109629002153594",
+        "peso_relativo": 0.12776054024457018,
+        "costo_prorrateado_usd": 162.84102938492424
+      },
+      {
+        "descripcion": "demon slayer sweats",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 62.0,
+        "guia": "CASI420785219434640109629005267580",
+        "peso_relativo": 0.25552108048914035,
+        "costo_prorrateado_usd": 325.6820587698485
+      },
+      {
+        "descripcion": "tanjiro zipup",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 65.0,
+        "guia": "CASI420785219434640109629005267580",
+        "peso_relativo": 0.12776054024457018,
+        "costo_prorrateado_usd": 162.84102938492424
+      },
+      {
+        "descripcion": "rengoku zipup",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 65.0,
+        "guia": "CASI420785219434640109629005267580",
+        "peso_relativo": 0.12776054024457018,
+        "costo_prorrateado_usd": 162.84102938492424
+      }
+    ],
+    "suma_factores": 5.479
+  },
+  "CONS9943741691": {
+    "fecha": "2026-01-01",
+    "total_usd": 63.64,
+    "paquetes": 1,
+    "piezas": [
+      {
+        "descripcion": "Mothra City Chaos \"Side By Side\" Everyday Basic Tee",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 48.0,
+        "guia": "CASI420785219200190244541414837086",
+        "peso_relativo": 1.0,
+        "costo_prorrateado_usd": 63.64
+      }
+    ],
+    "suma_factores": 0.5
+  },
+  "CONS9943741870": {
+    "fecha": "2026-01-01",
+    "total_usd": 1801.77,
+    "paquetes": 3,
+    "piezas": [
+      {
+        "descripcion": "W2230 camo cargo joggers",
+        "destino": "NEGOCIO",
+        "factor": 1.4,
+        "precio_usd": 52.0,
+        "guia": "CASI420785219434640109629006011632",
+        "peso_relativo": 0.13306972853775378,
+        "costo_prorrateado_usd": 239.76104478746862
+      },
+      {
+        "descripcion": "W472 legacy seamless tank",
+        "destino": "NEGOCIO",
+        "factor": 1.0,
+        "precio_usd": 18.0,
+        "guia": "CASI420785219434640109629006011632",
+        "peso_relativo": 0.09504980609839557,
+        "costo_prorrateado_usd": 171.2578891339062
+      },
+      {
+        "descripcion": "W149 curve hourglass biker shorts 6.5\"",
+        "destino": "NEGOCIO",
+        "factor": 0.7,
+        "precio_usd": 26.0,
+        "guia": "CASI420785219434640109629006011632",
+        "peso_relativo": 0.06653486426887689,
+        "costo_prorrateado_usd": 119.88052239373431
+      },
+      {
+        "descripcion": "W233 curve seamless leggings",
+        "destino": "NEGOCIO",
+        "factor": 1.0,
+        "precio_usd": 55.0,
+        "guia": "CASI420785219434640109629006011632",
+        "peso_relativo": 0.09504980609839557,
+        "costo_prorrateado_usd": 171.2578891339062
+      },
+      {
+        "descripcion": "4255 Batman Midnight Tee",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 22.0,
+        "guia": "CASI420785219434640109629006011632",
+        "peso_relativo": 0.047524903049197785,
+        "costo_prorrateado_usd": 85.6289445669531
+      },
+      {
+        "descripcion": "batman tee",
+        "destino": "NEGOCIO",
+        "factor": 0.5,
+        "precio_usd": 48.0,
+        "guia": "CASI420785219434640109629005663979",
+        "peso_relativo": 0.047524903049197785,
+        "costo_prorrateado_usd": 85.6289445669531
+      },
+      {
+        "descripcion": "batman zipup",
+        "destino": "NEGOCIO",
+        "factor": 0.7,
+        "precio_usd": 76.0,
+        "guia": "CASI420785219434640109629005663979",
+        "peso_relativo": 0.06653486426887689,
+        "costo_prorrateado_usd": 119.88052239373431
+      },
+      {
+        "descripcion": "batman sweats",
+        "destino": "NEGOCIO",
+        "factor": 1.4,
+        "precio_usd": 76.0,
+        "guia": "CASI420785219434640109629005663979",
+        "peso_relativo": 0.13306972853775378,
+        "costo_prorrateado_usd": 239.76104478746862
+      },
+      {
+        "descripcion": "AOT tee",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 42.0,
+        "guia": "CASI1ZC1R7210300545183",
+        "peso_relativo": 0.047524903049197785,
+        "costo_prorrateado_usd": 85.6289445669531
+      },
+      {
+        "descripcion": "AOT joggers",
+        "destino": "PERSONAL",
+        "factor": 1.4208,
+        "precio_usd": 68.0,
+        "guia": "CASI1ZC1R7210300545183",
+        "peso_relativo": 0.13504676450460043,
+        "costo_prorrateado_usd": 243.32320888145392
+      },
+      {
+        "descripcion": "batman sweats",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 76.0,
+        "guia": "CASI1ZC1R7210300545183",
+        "peso_relativo": 0.13306972853775378,
+        "costo_prorrateado_usd": 239.76104478746862
+      }
+    ],
+    "suma_factores": 10.5208
+  },
+  "CONS9943742286": {
+    "fecha": "2026-01-01",
+    "total_usd": 1412.6200000000001,
+    "paquetes": 3,
+    "piezas": [
+      {
+        "descripcion": "N's Zekrom 31 Promo - Pok\u00e9mon Center Stamp",
+        "destino": "PERSONAL",
+        "factor": 0.02,
+        "precio_usd": 120.0,
+        "guia": "CASI4207852170149400108106244117836182",
+        "peso_relativo": 0.003613043085538795,
+        "costo_prorrateado_usd": 5.103856923493813
+      },
+      {
+        "descripcion": "Gymshark x CBUM Washed Hoodie - Bros",
+        "destino": "NEGOCIO",
+        "factor": 1.254,
+        "precio_usd": 70.2,
+        "guia": "CASI1Z08X89A0300826855",
+        "peso_relativo": 0.22653780146328245,
+        "costo_prorrateado_usd": 320.0118291030621
+      },
+      {
+        "descripcion": "Gymshark x CBUM Hockey Jersey",
+        "destino": "NEGOCIO",
+        "factor": 0.4615,
+        "precio_usd": 50.4,
+        "guia": "CASI1Z08X89A0300826855",
+        "peso_relativo": 0.0833709691988077,
+        "costo_prorrateado_usd": 117.77149850961973
+      },
+      {
+        "descripcion": "Gymshark x CBUM Straight Leg Jogger",
+        "destino": "NEGOCIO",
+        "factor": 1.4,
+        "precio_usd": 63.0,
+        "guia": "CASI1Z08X89A0300826855",
+        "peso_relativo": 0.25291301598771565,
+        "costo_prorrateado_usd": 357.26998464456693
+      },
+      {
+        "descripcion": "Omega Breath Pants",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 90.0,
+        "guia": "CASI420785219205590267338805428145",
+        "peso_relativo": 0.25291301598771565,
+        "costo_prorrateado_usd": 357.26998464456693
+      },
+      {
+        "descripcion": "Breath Divinity Compression Shirt FIH",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 68.0,
+        "guia": "CASI420785219205590267338805428145",
+        "peso_relativo": 0.09032607713846988,
+        "costo_prorrateado_usd": 127.59642308734533
+      },
+      {
+        "descripcion": "Breath Divinity Compression Shirt FIH",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 68.0,
+        "guia": "CASI420785219205590267338805428145",
+        "peso_relativo": 0.09032607713846988,
+        "costo_prorrateado_usd": 127.59642308734533
+      }
+    ],
+    "suma_factores": 5.5355
+  },
+  "CONS9962926323": {
+    "fecha": "2026-01-01",
+    "total_usd": 2036.72,
+    "paquetes": 5,
+    "piezas": [
+      {
+        "descripcion": "Meta Oculus Quest 3 128GB with controllers",
+        "destino": "PERSONAL",
+        "factor": 1.0,
+        "precio_usd": 305.0,
+        "guia": "CASI4207852170149434908106245318083125",
+        "peso_relativo": 0.078125,
+        "costo_prorrateado_usd": 159.11875
+      },
+      {
+        "descripcion": "Gymshark Campus 7\" Shorts",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 12.6,
+        "guia": "CASI1Z08X89A0301650873",
+        "peso_relativo": 0.0546875,
+        "costo_prorrateado_usd": 111.383125
+      },
+      {
+        "descripcion": "Gymshark x Carlos Belcast Track Jacket",
+        "destino": "PERSONAL",
+        "factor": 1.2,
+        "precio_usd": 45.0,
+        "guia": "CASI1Z08X89A0301650873",
+        "peso_relativo": 0.09375,
+        "costo_prorrateado_usd": 190.9425
+      },
+      {
+        "descripcion": "Gymshark Vital 1/4 Zip",
+        "destino": "NEGOCIO",
+        "factor": 1.0,
+        "precio_usd": 39.6,
+        "guia": "CASI1Z08X89A0301650873",
+        "peso_relativo": 0.078125,
+        "costo_prorrateado_usd": 159.11875
+      },
+      {
+        "descripcion": "Gymshark Campus Mesh Shorts",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 20.0,
+        "guia": "CASI1Z08X89A0301650873",
+        "peso_relativo": 0.0546875,
+        "costo_prorrateado_usd": 111.383125
+      },
+      {
+        "descripcion": "Ghidorah City Chaos \"Side By Side\" Everyday Distressed Tee",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 60.0,
+        "guia": "CASI420785219200190244541419304040",
+        "peso_relativo": 0.0390625,
+        "costo_prorrateado_usd": 79.559375
+      },
+      {
+        "descripcion": "Gymshark Power Straight Leg Pants",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 37.44,
+        "guia": "CASI1Z1F92320318576758",
+        "peso_relativo": 0.109375,
+        "costo_prorrateado_usd": 222.76625
+      },
+      {
+        "descripcion": "Gymshark Crest Oversized Joggers",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 28.8,
+        "guia": "CASI1Z1F92320318576758",
+        "peso_relativo": 0.109375,
+        "costo_prorrateado_usd": 222.76625
+      },
+      {
+        "descripcion": "Gymshark Power Oversized Hoodie",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 39.06,
+        "guia": "CASI1Z1F92320318576758",
+        "peso_relativo": 0.0546875,
+        "costo_prorrateado_usd": 111.383125
+      },
+      {
+        "descripcion": "Gymshark x Carlos Belcast Track Pant",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 57.6,
+        "guia": "CASI1Z1F92320318576758",
+        "peso_relativo": 0.109375,
+        "costo_prorrateado_usd": 222.76625
+      },
+      {
+        "descripcion": "Gymshark Pumper Pants",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 35.28,
+        "guia": "CASI1Z1F92320318576758",
+        "peso_relativo": 0.109375,
+        "costo_prorrateado_usd": 222.76625
+      },
+      {
+        "descripcion": "Executioner Banana Shape Uncuffed Sweatpants",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 90.0,
+        "guia": "CASI420785219205590267338808841279",
+        "peso_relativo": 0.109375,
+        "costo_prorrateado_usd": 222.76625
+      }
+    ],
+    "suma_factores": 12.799999999999999
+  },
+  "CONS_SIN_ASIGNAR_202607": {
+    "fecha": "2026-01-01",
+    "total_usd": 352.68,
+    "paquetes": 1,
+    "piezas": [
+      {
+        "descripcion": "5197 Demon Slayer Kimetsu no Yaiba Quarter Zip",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 24.0,
+        "guia": "4207852170149334620826000001283829",
+        "peso_relativo": 0.19999999999999998,
+        "costo_prorrateado_usd": 70.536
+      },
+      {
+        "descripcion": "2064 Sideline Joggers",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 50.0,
+        "guia": "4207852170149334620826000001283829",
+        "peso_relativo": 0.39999999999999997,
+        "costo_prorrateado_usd": 141.072
+      },
+      {
+        "descripcion": "2069 Elevated Essentials Baggy Joggers",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 58.0,
+        "guia": "4207852170149334620826000001283829",
+        "peso_relativo": 0.39999999999999997,
+        "costo_prorrateado_usd": 141.072
+      }
+    ],
+    "suma_factores": 3.5
+  },
+  "CONS_FUERA_380419641012": {
+    "fecha": "2026-01-01",
+    "total_usd": 0.0,
+    "paquetes": 0,
+    "piezas": [
+      {
+        "descripcion": "Godzilla Hell Forever Hoodie",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 85.0,
+        "guia": "380419641012"
+      },
+      {
+        "descripcion": "Godzilla Hell Lounger Sweat Pants",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 85.0,
+        "guia": "380419641012"
+      }
+    ],
+    "suma_factores": 2.0999999999999996
+  },
+  "CONS_FUERA_380416815890": {
+    "fecha": "2026-01-01",
+    "total_usd": 0.0,
+    "paquetes": 0,
+    "piezas": [
+      {
+        "descripcion": "Monsters In Time Lex Double Layer Hoodie",
+        "destino": "PERSONAL",
+        "factor": 0.7,
+        "precio_usd": 68.0,
+        "guia": "380416815890"
+      },
+      {
+        "descripcion": "Monsters In Time Eternal Wide Leg Pants",
+        "destino": "PERSONAL",
+        "factor": 1.4,
+        "precio_usd": 68.0,
+        "guia": "380416815890"
+      }
+    ],
+    "suma_factores": 2.0999999999999996
+  },
+  "CONS_FUERA_1Z08X89AYW00349426": {
+    "fecha": "2026-01-01",
+    "total_usd": 895.5,
+    "paquetes": 1,
+    "piezas": [
+      {
+        "descripcion": "Gymshark Vital Seamless 2.0 Leggings",
+        "destino": "NEGOCIO",
+        "factor": 1.0,
+        "precio_usd": 32.4,
+        "guia": "1Z08X89AYW00349426",
+        "peso_relativo": 0.25641025641025644,
+        "costo_prorrateado_usd": 229.61538461538464
+      },
+      {
+        "descripcion": "Gymshark Minimal Sports Bra",
+        "destino": "NEGOCIO",
+        "factor": 0.4,
+        "precio_usd": 21.0,
+        "guia": "1Z08X89AYW00349426",
+        "peso_relativo": 0.10256410256410257,
+        "costo_prorrateado_usd": 91.84615384615385
+      },
+      {
+        "descripcion": "Gymshark Adapt Animal Seamless Sports Bra",
+        "destino": "NEGOCIO",
+        "factor": 0.4,
+        "precio_usd": 32.2,
+        "guia": "1Z08X89AYW00349426",
+        "peso_relativo": 0.10256410256410257,
+        "costo_prorrateado_usd": 91.84615384615385
+      },
+      {
+        "descripcion": "Gymshark Flex High Waisted Leggings",
+        "destino": "NEGOCIO",
+        "factor": 1.0,
+        "precio_usd": 30.0,
+        "guia": "1Z08X89AYW00349426",
+        "peso_relativo": 0.25641025641025644,
+        "costo_prorrateado_usd": 229.61538461538464
+      },
+      {
+        "descripcion": "Gymshark Everyday Seamless Shorts 2.0",
+        "destino": "NEGOCIO",
+        "factor": 0.7,
+        "precio_usd": 22.4,
+        "guia": "1Z08X89AYW00349426",
+        "peso_relativo": 0.1794871794871795,
+        "costo_prorrateado_usd": 160.73076923076923
+      },
+      {
+        "descripcion": "Gymshark Vital Sports Bra",
+        "destino": "NEGOCIO",
+        "factor": 0.4,
+        "precio_usd": 15.2,
+        "guia": "1Z08X89AYW00349426",
+        "peso_relativo": 0.10256410256410257,
+        "costo_prorrateado_usd": 91.84615384615385
+      }
+    ],
+    "suma_factores": 3.9
+  },
+  "CONS_FUERA_382233588111": {
+    "fecha": "2026-01-01",
+    "total_usd": 0.0,
+    "paquetes": 0,
+    "piezas": [
+      {
+        "descripcion": "Civil Racing Biker Jacket",
+        "destino": "PERSONAL",
+        "factor": 1.2,
+        "precio_usd": 127.5,
+        "guia": "382233588111"
+      },
+      {
+        "descripcion": "Civil Racing Biker Jacket",
+        "destino": "PERSONAL",
+        "factor": 1.2,
+        "precio_usd": 127.5,
+        "guia": "382233588111"
+      }
+    ],
+    "suma_factores": 2.4
+  },
+  "SBAAAAQLJHVRGP222_FEDEX382233588111": {
+    "fecha": "2026-01-01",
+    "total_usd": 5186.66,
+    "paquetes": 3,
+    "piezas": [
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.5162,
+        "precio_usd": 45.0,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless T-Shirt",
+        "destino": "PERSONAL",
+        "factor": 0.5162,
+        "precio_usd": 40.5,
+        "guia": "1Z08X89A0320535275",
+        "peso_relativo": 0.06646922482616534,
+        "costo_prorrateado_usd": 344.7532696368787
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless Long Sleeve T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.522,
+        "precio_usd": 50.4,
+        "guia": "1Z08YY74YW30322345",
+        "peso_relativo": 0.06721607004893124,
+        "costo_prorrateado_usd": 348.6269018799897
+      },
+      {
+        "descripcion": "Onyx 5.0 Seamless Long Sleeve T-Shirt",
+        "destino": "NEGOCIO",
+        "factor": 0.522,
+        "precio_usd": 50.4,
+        "guia": "1Z08YY74YW30322345",
+        "peso_relativo": 0.06721607004893124,
+        "costo_prorrateado_usd": 348.6269018799897
+      },
+      {
+        "descripcion": "Gymshark Power T-Shirt",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 21.6,
+        "guia": "1Z08X89AYW01891981",
+        "peso_relativo": 0.06438320885912954,
+        "costo_prorrateado_usd": 333.9338140612928
+      },
+      {
+        "descripcion": "Gymshark Kettlebell Charm",
+        "destino": "PERSONAL",
+        "factor": 0.02,
+        "precio_usd": 8.4,
+        "guia": "1Z08X89AYW01891981",
+        "peso_relativo": 0.0025753283543651817,
+        "costo_prorrateado_usd": 13.357352562451712
+      },
+      {
+        "descripcion": "Gymshark Kettlebell Charm",
+        "destino": "PERSONAL",
+        "factor": 0.02,
+        "precio_usd": 8.4,
+        "guia": "1Z08X89AYW01891981",
+        "peso_relativo": 0.0025753283543651817,
+        "costo_prorrateado_usd": 13.357352562451712
+      },
+      {
+        "descripcion": "Gymshark Kettlebell Charm",
+        "destino": "PERSONAL",
+        "factor": 0.02,
+        "precio_usd": 8.4,
+        "guia": "1Z08X89AYW01891981",
+        "peso_relativo": 0.0025753283543651817,
+        "costo_prorrateado_usd": 13.357352562451712
+      },
+      {
+        "descripcion": "Gymshark Charge T-Shirt",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 21.6,
+        "guia": "1Z08X89AYW01891981",
+        "peso_relativo": 0.06438320885912954,
+        "costo_prorrateado_usd": 333.9338140612928
+      },
+      {
+        "descripcion": "Gymshark Charge T-Shirt",
+        "destino": "PERSONAL",
+        "factor": 0.5,
+        "precio_usd": 21.6,
+        "guia": "1Z08X89AYW01891981",
+        "peso_relativo": 0.06438320885912954,
+        "costo_prorrateado_usd": 333.9338140612928
+      }
+    ],
+    "suma_factores": 7.766
+  }
+}
