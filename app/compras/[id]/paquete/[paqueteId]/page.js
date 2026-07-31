@@ -1,14 +1,15 @@
 import { q } from '@/lib/db'
 import { notFound } from 'next/navigation'
-import { Plus, ArrowLeft, User } from 'lucide-react'
+import { Plus, ArrowLeft, User, Edit } from 'lucide-react'
 import Link from 'next/link'
 import FormPieza from '../../../FormPieza'
 import ActionButton from '@/components/ActionButton'
 import { borrarPieza } from '@/lib/actions'
 
 export default async function PaquetePage({ params }) {
-  const cruceId = Number(params.id)
-  const paqueteId = Number(params.paqueteId)
+  const { id, paqueteId: paqueteIdParam } = await params
+  const cruceId = Number(id)
+  const paqueteId = Number(paqueteIdParam)
 
   const [paquete] = await q(
     `SELECT pq.*, c.folio cruce_folio, paq.nombre paqueteria
@@ -51,7 +52,19 @@ export default async function PaquetePage({ params }) {
           <p className="text-stone-500 mt-1">
             {paquete.cruce_folio} · {paquete.paqueteria || 'Sin paquetería'} · {paquete.fecha_llegada || '—'}
           </p>
+          {paquete.notas && (
+            <p className="text-sm text-stone-600 mt-2 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+              <strong>Nota:</strong> {paquete.notas}
+            </p>
+          )}
         </div>
+        <Link
+          href={`/compras/${cruceId}/paquete/${paqueteId}/editar`}
+          className="px-4 py-2 text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors flex items-center gap-2"
+        >
+          <Edit className="w-4 h-4" />
+          Editar
+        </Link>
         <FormPieza paqueteId={paqueteId} marcas={marcas} tipos={tipos} socios={socios} skus={skus} />
       </div>
 

@@ -1,14 +1,15 @@
 import { q } from '@/lib/db'
 import { notFound } from 'next/navigation'
-import { Plus, ArrowLeft, Package2, ChevronRight } from 'lucide-react'
+import { Plus, ArrowLeft, Package2, ChevronRight, Edit } from 'lucide-react'
 import Link from 'next/link'
 import FormPaquete from '../FormPaquete'
 import ActionButton from '@/components/ActionButton'
 import { borrarPaquete } from '@/lib/actions'
 
 export default async function CrucePage({ params }) {
-  const id = Number(params.id)
-  const [cruce] = await q('SELECT * FROM cruce WHERE id = ?', [id])
+  const { id } = await params
+  const cruceId = Number(id)
+  const [cruce] = await q('SELECT * FROM cruce WHERE id = ?', [cruceId])
   if (!cruce) notFound()
 
   const paquetes = await q(
@@ -23,7 +24,7 @@ export default async function CrucePage({ params }) {
      WHERE pq.cruce_id = ?
      GROUP BY pq.id
      ORDER BY pq.fecha_llegada DESC`,
-    [id])
+    [cruceId])
 
   const paqueterias = await q('SELECT id, nombre FROM paqueteria ORDER BY nombre')
   const ubicaciones = await q('SELECT id, nombre FROM ubicacion ORDER BY nombre')
@@ -40,14 +41,21 @@ export default async function CrucePage({ params }) {
             {cruce.fecha} · ${Number(cruce.costo_mxn).toLocaleString('es-MX', { minimumFractionDigits: 2 })}
           </p>
         </div>
-        <FormPaquete cruceId={id} paqueterias={paqueterias} ubicaciones={ubicaciones} />
+        <Link
+          href={`/compras/${cruceId}/editar`}
+          className="px-4 py-2 text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors flex items-center gap-2"
+        >
+          <Edit className="w-4 h-4" />
+          Editar Cruce
+        </Link>
+        <FormPaquete cruceId={cruceId} paqueterias={paqueterias} ubicaciones={ubicaciones} />
       </div>
 
       <div className="space-y-3">
         {paquetes.map(pq => (
           <Link
             key={pq.id}
-            href={`/compras/${id}/paquete/${pq.id}`}
+            href={`/compras/${cruceId}/paquete/${pq.id}`}
             className="card card-body hover:shadow-lift transition-shadow duration-200 block"
           >
             <div className="flex items-start justify-between">

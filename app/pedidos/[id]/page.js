@@ -6,7 +6,8 @@ import ActionButton from '@/components/ActionButton'
 import { actualizarEstadoPedido } from '@/lib/actions'
 
 export default async function PedidoDetallePage({ params }) {
-  const pedidoId = Number(params.id)
+  const { id } = await params
+  const pedidoId = Number(id)
 
   const [pedido] = await q(
     `SELECT p.*, prov.nombre proveedor, s.nombre socio_comprador
