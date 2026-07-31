@@ -7,14 +7,14 @@ export default async function CapitalPage() {
   // Capital por socio desde vista
   const capitalPorSocio = await q(`SELECT * FROM v_capital_socio ORDER BY nombre`)
 
-  // Inversión total del negocio (costo de todas las compras)
+  // Inversión total del negocio (costo real de piezas NEGOCIO + cruces)
   const inversionTotalResult = await q(`
-    SELECT COALESCE(SUM(COALESCE(vpc.costo_total_mxn, sc.costo_total_usd) * m.cantidad), 0) as total
-    FROM movimiento m
-    JOIN sku s ON s.id = m.sku_id
-    LEFT JOIN v_pieza_costo vpc ON vpc.sku_id = s.id
-    LEFT JOIN sku_costo sc ON sc.sku_id = s.id
-    WHERE m.tipo = 'COMPRA'
+    SELECT
+      (SELECT COALESCE(SUM(vpc.costo_prenda_mxn), 0)
+       FROM pieza p
+       JOIN v_pieza_costo vpc ON vpc.pieza_id = p.id
+       WHERE p.destino = 'NEGOCIO') +
+      (SELECT COALESCE(SUM(c.costo_mxn), 0) FROM cruce c) as total
   `)
   const inversionTotalNegocio = parseFloat(inversionTotalResult[0]?.total || 0)
 
@@ -357,13 +357,13 @@ export default async function CapitalPage() {
             <tbody className="divide-y divide-stone-200">
               {capitalPorSocio.map(s => {
                 const porcentaje = parseFloat(s.porcentaje_propiedad || 0)
-                // Inversión = su % del costo total de compras + aportaciones - retiros
-                const inversionCompras = (inversionTotalNegocio * porcentaje) / 100
-                const aportaciones = parseFloat(s.aportaciones || 0)
-                const retiros = parseFloat(s.retiros || 0)
-                const inversionNeta = inversionCompras + aportaciones - retiros
+                // Inversión = su % del costo total de compras (productos + cruces)
+                const inversionNeta = (inversionTotalNegocio * porcentaje) / 100
                 const comisiones = parseFloat(comisionesPorSocio.find(c => c.id === s.id)?.comisiones_totales || 0)
-                const valorParticipacion = (valorTeorico * porcentaje) / 100
+                // Capital actual = inversión - (ventas vendidas al costo * 87%)
+                const retornoVentas = (ingresosTotales * 0.87) // 87% vuelve al capital (13% comisiones)
+                const capitalActual = inversionTotalNegocio - retornoVentas
+                const valorParticipacion = (capitalActual * porcentaje) / 100
                 const retornoTotal = comisiones + valorParticipacion
                 const roi = inversionNeta > 0 ? ((retornoTotal - inversionNeta) / inversionNeta) * 100 : 0
                 const roiMensual = mesesTranscurridos > 0 ? roi / mesesTranscurridos : 0
