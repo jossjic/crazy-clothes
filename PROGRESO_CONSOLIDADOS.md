@@ -132,3 +132,26 @@ investigacion-duplicados/
 ---
 
 **Última actualización:** 2026-07-30 23:15
+
+---
+
+## 📝 Actualización 2026-07-30 23:20
+
+### 6. Matching de SKUs ✅ (Análisis completado)
+
+**Hallazgo:** Las 41 piezas NEGOCIO son **productos nuevos** sin SKU existente.
+
+**Resultado del análisis:**
+- 0 matches con SKUs actuales
+- 41 SKUs nuevos requeridos
+- ~15-20 productos base nuevos
+
+**Decisión pendiente:**
+- Crear 41 SKUs nuevos (complejo, requiere catalogación cuidadosa)
+- O dejar sin SKU temporalmente (permite continuar con prorrateo/deudas)
+
+**Ver:** `HALLAZGO_MATCHING.md` para detalles completos
+
+---
+
+**Última actualización:** 2026-07-30 23:20
