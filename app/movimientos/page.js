@@ -42,9 +42,11 @@ export default async function MovimientosPage({ searchParams }) {
   // Piezas sin SKU (todas, separadas por estado)
   const todasSinSku = await q(`SELECT * FROM v_piezas_sin_sku`)
   const sinSku = todasSinSku.filter(p => p.estado === 'Pendiente catalogar')
-  const perdidas = todasSinSku.filter(p => p.estado === 'Pérdida operativa')
+  // Fix encoding: MySQL devuelve "PÃ©rdida" por problema de charset
+  const perdidas = todasSinSku.filter(p => p.estado.includes('rdida operativa'))
 
   console.log('DEBUG todasSinSku:', todasSinSku.length)
+  console.log('DEBUG estados:', todasSinSku.map(p => `"${p.estado}"`))
   console.log('DEBUG perdidas:', perdidas.length, perdidas.map(p => p.descripcion))
 
   // Estadísticas
