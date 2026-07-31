@@ -1,0 +1,814 @@
+[
+  {
+    "folio": "CONS9928546710",
+    "paquetes": [
+      {
+        "guide_raw": "CASI420785219434640109629005071033",
+        "tracking_number": "420785219434640109629005071033",
+        "items": [
+          {
+            "line": "• item: foundation cropped tee; color: black; size: M; qty: 1; personal: no; unit: 36.00 usd",
+            "unit_price": 36.0,
+            "qty": 1,
+            "subtotal": 36.0
+          },
+          {
+            "line": "• item: flagship track pants; color: black; size: M; qty: 1; personal: no; unit: 50.00 usd",
+            "unit_price": 50.0,
+            "qty": 1,
+            "subtotal": 50.0
+          },
+          {
+            "line": "• item: immortal killer joggers; color: black; size: M; qty: 1; personal: no; unit: 50.00 usd",
+            "unit_price": 50.0,
+            "qty": 1,
+            "subtotal": 50.0
+          },
+          {
+            "line": "• item: foundation cropped tee; color: black; size: S; qty: 2; personal: no; unit: 36.00 usd",
+            "unit_price": 36.0,
+            "qty": 2,
+            "subtotal": 72.0
+          },
+          {
+            "line": "• item: supervillain; color: black; size: M; qty: 1; personal: no; unit: 38.00 usd",
+            "unit_price": 38.0,
+            "qty": 1,
+            "subtotal": 38.0
+          },
+          {
+            "line": "• item: flagship track pants; color: burgundy; size: M; qty: 1; personal: no; unit: 50.00 usd",
+            "unit_price": 50.0,
+            "qty": 1,
+            "subtotal": 50.0
+          }
+        ],
+        "subtotal_items_usd": 296.0,
+        "shipping_protection_usd": 7.01,
+        "shipping_usd": 0.0,
+        "discount_usd": 45.63,
+        "discount_already_applied": false,
+        "taxes_usd": 20.77,
+        "adjustment_usd": 1.24,
+        "total_usd": 279.39
+      },
+      {
+        "guide_raw": "CASI420785219434640109629005034571",
+        "tracking_number": "420785219434640109629005034571",
+        "items": [
+          {
+            "line": "• item: warrior; color: red; size: L; qty: 1; personal: yes; owner: unspecified; unit: 42.00 usd",
+            "unit_price": 42.0,
+            "qty": 1,
+            "subtotal": 42.0
+          },
+          {
+            "line": "• item: warrior; color: red; size: M; qty: 1; personal: no; unit: 42.00 usd",
+            "unit_price": 42.0,
+            "qty": 1,
+            "subtotal": 42.0
+          },
+          {
+            "line": "• item: batman; color: black; size: M; qty: 1; personal: no; unit: 48.00 usd",
+            "unit_price": 48.0,
+            "qty": 1,
+            "subtotal": 48.0
+          },
+          {
+            "line": "• item: batman; color: black; size: S; qty: 1; personal: no; unit: 48.00 usd",
+            "unit_price": 48.0,
+            "qty": 1,
+            "subtotal": 48.0
+          }
+        ],
+        "subtotal_items_usd": 180.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 27.0,
+        "discount_already_applied": false,
+        "taxes_usd": 12.62,
+        "adjustment_usd": null,
+        "total_usd": 165.62
+      }
+    ],
+    "fecha": "2026-03-25"
+  },
+  {
+    "folio": "CONS9943741515",
+    "paquetes": [
+      {
+        "guide_raw": "CASI1Z08X89A0320538281",
+        "tracking_number": "1Z08X89A0320538281",
+        "items": [
+          {
+            "line": "• item: onyx hoodie; color: red; size: M; qty: 1; personal: no; unit: 57.60 usd",
+            "unit_price": 57.6,
+            "qty": 1,
+            "subtotal": 57.6
+          },
+          {
+            "line": "• item: onyx hoodie; color: light grey; size: S; qty: 1; personal: no; unit: 57.60 usd",
+            "unit_price": 57.6,
+            "qty": 1,
+            "subtotal": 57.6
+          },
+          {
+            "line": "• item: onyx hoodie; color: purple; size: M; qty: 1; personal: no; unit: 57.60 usd",
+            "unit_price": 57.6,
+            "qty": 1,
+            "subtotal": 57.6
+          }
+        ],
+        "subtotal_items_usd": 172.8,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 19.2,
+        "discount_already_applied": false,
+        "taxes_usd": 14.25,
+        "adjustment_usd": 19.15,
+        "total_usd": 187.0
+      },
+      {
+        "guide_raw": "CASI420785219400140109629002153594",
+        "tracking_number": "420785219400140109629002153594",
+        "items": [
+          {
+            "line": "• item: demon slayer rengoku tee; size: NA; qty: 1; personal: no; unit: 42.00 usd",
+            "unit_price": 42.0,
+            "qty": 1,
+            "subtotal": 42.0
+          },
+          {
+            "line": "• item: quarter zipup; size: NA; qty: 1; personal: yes; owner: JJ; unit: 55.00 usd",
+            "unit_price": 55.0,
+            "qty": 1,
+            "subtotal": 55.0
+          }
+        ],
+        "subtotal_items_usd": 97.0,
+        "shipping_protection_usd": 3.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 15.0,
+        "discount_already_applied": false,
+        "taxes_usd": 6.8,
+        "adjustment_usd": null,
+        "total_usd": 91.8
+      },
+      {
+        "guide_raw": "CASI420785219434640109629005267580",
+        "tracking_number": "420785219434640109629005267580",
+        "items": [
+          {
+            "line": "• item: demon slayer sweats; size: L; qty: 1; personal: yes; owner: JJ; unit: 62.00 usd",
+            "unit_price": 62.0,
+            "qty": 1,
+            "subtotal": 62.0
+          },
+          {
+            "line": "• item: tanjiro zipup; size: NA; qty: 1; personal: yes; owner: JJ; unit: 65.00 usd",
+            "unit_price": 65.0,
+            "qty": 1,
+            "subtotal": 65.0
+          },
+          {
+            "line": "• item: rengoku zipup; size: NA; qty: 1; personal: yes; owner: JJ; unit: 65.00 usd",
+            "unit_price": 65.0,
+            "qty": 1,
+            "subtotal": 65.0
+          }
+        ],
+        "subtotal_items_usd": 192.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 28.8,
+        "discount_already_applied": false,
+        "taxes_usd": 13.46,
+        "adjustment_usd": null,
+        "total_usd": 176.66
+      }
+    ],
+    "fecha": "2026-04-08"
+  },
+  {
+    "folio": "CONS9943741691",
+    "paquetes": [
+      {
+        "guide_raw": "CASI420785219200190244541414837086",
+        "tracking_number": "420785219200190244541414837086",
+        "items": [
+          {
+            "line": "• item: Mothra City Chaos \"Side By Side\" Everyday Basic Tee; color: black; size: S; qty: 1; personal: yes; owner: Luis; inferred: yes; unit: 48.00 usd",
+            "unit_price": 48.0,
+            "qty": 1,
+            "subtotal": 48.0
+          }
+        ],
+        "subtotal_items_usd": 48.0,
+        "shipping_protection_usd": 0.98,
+        "shipping_usd": 9.95,
+        "discount_usd": 12.0,
+        "discount_already_applied": true,
+        "taxes_usd": 4.71,
+        "adjustment_usd": null,
+        "total_usd": 63.64
+      }
+    ],
+    "fecha": "2026-04-16"
+  },
+  {
+    "folio": "CONS9943741870",
+    "paquetes": [
+      {
+        "guide_raw": "CASI420785219434640109629006011632",
+        "tracking_number": "420785219434640109629006011632",
+        "items": [
+          {
+            "line": "• item: W2230 camo cargo joggers; color: pink barbed wire camo; size: S; qty: 1; personal: yes; owner: client order; unit: 52.00 usd",
+            "unit_price": 52.0,
+            "qty": 1,
+            "subtotal": 52.0
+          },
+          {
+            "line": "• item: W472 legacy seamless tank; color: dusty blue; size: XS; qty: 1; personal: yes; owner: client order; unit: 18.00 usd",
+            "unit_price": 18.0,
+            "qty": 1,
+            "subtotal": 18.0
+          },
+          {
+            "line": "• item: W149 curve hourglass biker shorts 6.5\"; color: grey; size: S; qty: 1; personal: yes; owner: client order; unit: 26.00 usd",
+            "unit_price": 26.0,
+            "qty": 1,
+            "subtotal": 26.0
+          },
+          {
+            "line": "• item: W233 curve seamless leggings; color: green; size: M; qty: 1; personal: yes; owner: client order; unit: 55.00 usd",
+            "unit_price": 55.0,
+            "qty": 1,
+            "subtotal": 55.0
+          },
+          {
+            "line": "• item: 4255 Batman Midnight Tee; color: Joker P; size: M; qty: 1; personal: yes; owner: client order; unit: 22.00 usd",
+            "unit_price": 22.0,
+            "qty": 1,
+            "subtotal": 22.0
+          }
+        ],
+        "subtotal_items_usd": 173.0,
+        "shipping_protection_usd": 5.25,
+        "shipping_usd": 0.0,
+        "discount_usd": 35.65,
+        "discount_already_applied": false,
+        "taxes_usd": 11.42,
+        "adjustment_usd": null,
+        "total_usd": 154.02
+      },
+      {
+        "guide_raw": "CASI420785219434640109629005663979",
+        "tracking_number": "420785219434640109629005663979",
+        "items": [
+          {
+            "line": "• item: batman tee; color: white; size: M; qty: 1; personal: no; unit: 48.00 usd",
+            "unit_price": 48.0,
+            "qty": 1,
+            "subtotal": 48.0
+          },
+          {
+            "line": "• item: batman zipup; size: M; qty: 1; personal: no; unit: 76.00 usd",
+            "unit_price": 76.0,
+            "qty": 1,
+            "subtotal": 76.0
+          },
+          {
+            "line": "• item: batman sweats; size: M; qty: 1; personal: no; unit: 76.00 usd",
+            "unit_price": 76.0,
+            "qty": 1,
+            "subtotal": 76.0
+          }
+        ],
+        "subtotal_items_usd": 200.0,
+        "shipping_protection_usd": 6.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 41.2,
+        "discount_already_applied": false,
+        "taxes_usd": 13.21,
+        "adjustment_usd": null,
+        "total_usd": 178.01
+      },
+      {
+        "guide_raw": "CASI1ZC1R7210300545183",
+        "tracking_number": "1ZC1R7210300545183",
+        "items": [
+          {
+            "line": "• item: AOT tee; color: white; size: L; qty: 1; personal: yes; owner: JJ; unit: 42.00 usd",
+            "unit_price": 42.0,
+            "qty": 1,
+            "subtotal": 42.0
+          },
+          {
+            "line": "• item: AOT joggers; color: red; size: L; qty: 1; personal: yes; owner: JJ; unit: 68.00 usd",
+            "unit_price": 68.0,
+            "qty": 1,
+            "subtotal": 68.0
+          },
+          {
+            "line": "• item: batman sweats; size: M; qty: 1; personal: yes; owner: JJ; unit: 76.00 usd",
+            "unit_price": 76.0,
+            "qty": 1,
+            "subtotal": 76.0
+          }
+        ],
+        "subtotal_items_usd": 186.0,
+        "shipping_protection_usd": 6.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 38.4,
+        "discount_already_applied": false,
+        "taxes_usd": 12.28,
+        "adjustment_usd": null,
+        "total_usd": 165.88
+      }
+    ],
+    "fecha": "2026-04-27"
+  },
+  {
+    "folio": "CONS9943742286",
+    "paquetes": [
+      {
+        "guide_raw": "CASI4207852170149400108106244117836182",
+        "tracking_number": "4207852170149400108106244117836182",
+        "items": [
+          {
+            "line": "• item: N's Zekrom 31 Promo - Ascended Heroes ETB - Pokemon Center Stamp; size: NA; qty: 1; personal: no; unit: 120.00 usd",
+            "unit_price": 120.0,
+            "qty": 1,
+            "subtotal": 120.0
+          }
+        ],
+        "subtotal_items_usd": 120.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 5.97,
+        "discount_usd": 0.0,
+        "discount_already_applied": false,
+        "taxes_usd": 10.39,
+        "adjustment_usd": null,
+        "total_usd": 136.36
+      },
+      {
+        "guide_raw": "CASI1Z08X89A0300826855",
+        "tracking_number": "1Z08X89A0300826855",
+        "items": [
+          {
+            "line": "• item: Gymshark x CBUM Washed Hoodie - Bros; color: stone grey marl; size: M; qty: 1; personal: no; inferred: yes; unit: 70.20 usd",
+            "unit_price": 70.2,
+            "qty": 1,
+            "subtotal": 70.2
+          },
+          {
+            "line": "• item: Gymshark x CBUM Hockey Jersey; color: black; size: M; qty: 1; personal: no; inferred: yes; unit: 50.40 usd",
+            "unit_price": 50.4,
+            "qty": 1,
+            "subtotal": 50.4
+          },
+          {
+            "line": "• item: Gymshark x CBUM Straight Leg Jogger; color: black; size: M; qty: 1; personal: no; inferred: yes; unit: 63.00 usd",
+            "unit_price": 63.0,
+            "qty": 1,
+            "subtotal": 63.0
+          }
+        ],
+        "subtotal_items_usd": 183.6,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 20.4,
+        "discount_already_applied": true,
+        "taxes_usd": 15.15,
+        "adjustment_usd": null,
+        "total_usd": 198.75
+      },
+      {
+        "guide_raw": "CASI420785219205590267338805428145",
+        "tracking_number": "420785219205590267338805428145",
+        "items": [
+          {
+            "line": "• item: Omega Breath Pants; size: XS; qty: 1; personal: yes; owner: Luis Cruz; unit: 90.00 usd",
+            "unit_price": 90.0,
+            "qty": 1,
+            "subtotal": 90.0
+          },
+          {
+            "line": "• item: FIH; size: L; qty: 1; personal: no; unit: 68.00 usd",
+            "unit_price": 68.0,
+            "qty": 1,
+            "subtotal": 68.0
+          },
+          {
+            "line": "• item: FIH; size: M; qty: 1; personal: no; unit: 68.00 usd",
+            "unit_price": 68.0,
+            "qty": 1,
+            "subtotal": 68.0
+          }
+        ],
+        "subtotal_items_usd": 226.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 11.95,
+        "discount_usd": 30.24,
+        "discount_already_applied": false,
+        "taxes_usd": 18.96,
+        "adjustment_usd": null,
+        "total_usd": 226.67
+      }
+    ],
+    "fecha": "2026-05-21"
+  },
+  {
+    "folio": "CONS9962926323",
+    "paquetes": [
+      {
+        "guide_raw": "CASI4207852170149434908106245318083125",
+        "tracking_number": "4207852170149434908106245318083125",
+        "items": [
+          {
+            "line": "• item: Meta Oculus Quest 3 128GB with controllers; size: NA; qty: 1; personal: yes; owner: JJ; unit: 305.00 usd",
+            "unit_price": 305.0,
+            "qty": 1,
+            "subtotal": 305.0
+          }
+        ],
+        "subtotal_items_usd": 305.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 9.99,
+        "discount_usd": 0.0,
+        "discount_already_applied": false,
+        "taxes_usd": 25.99,
+        "adjustment_usd": null,
+        "total_usd": 340.98
+      },
+      {
+        "guide_raw": "CASI1Z08X89A0301650873",
+        "tracking_number": "1Z08X89A0301650873",
+        "items": [
+          {
+            "line": "• item: Gymshark Campus 7\" Shorts; color: light grey; size: XS; qty: 1; personal: no; unit: 12.60 usd",
+            "unit_price": 12.6,
+            "qty": 1,
+            "subtotal": 12.6
+          },
+          {
+            "line": "• item: Gymshark x Carlos Belcast Track Jacket; color: grey; size: XS; qty: 1; personal: no; unit: 45.00 usd",
+            "unit_price": 45.0,
+            "qty": 1,
+            "subtotal": 45.0
+          },
+          {
+            "line": "• item: Gymshark Vital 1/4 Zip; color: black/silhouette grey; size: L; qty: 1; personal: no; unit: 39.60 usd",
+            "unit_price": 39.6,
+            "qty": 1,
+            "subtotal": 39.6
+          },
+          {
+            "line": "• item: Gymshark Campus Mesh Shorts; color: black/conditioning red; size: S; qty: 1; personal: no; unit: 20.00 usd",
+            "unit_price": 20.0,
+            "qty": 1,
+            "subtotal": 20.0
+          }
+        ],
+        "subtotal_items_usd": 117.2,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 11.72,
+        "discount_already_applied": false,
+        "taxes_usd": 8.71,
+        "adjustment_usd": null,
+        "total_usd": 114.19
+      },
+      {
+        "guide_raw": "CASI420785219200190244541419304040",
+        "tracking_number": "420785219200190244541419304040",
+        "items": [
+          {
+            "line": "• item: Ghidorah City Chaos \"Side By Side\" Everyday Distressed Tee; color: black; size: S; qty: 1; personal: yes; owner: Luis; unit: 60.00 usd",
+            "unit_price": 60.0,
+            "qty": 1,
+            "subtotal": 60.0
+          }
+        ],
+        "subtotal_items_usd": 60.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 9.95,
+        "discount_usd": 12.0,
+        "discount_already_applied": false,
+        "taxes_usd": 4.63,
+        "adjustment_usd": null,
+        "total_usd": 62.58
+      },
+      {
+        "guide_raw": "CASI1Z1F92320318576758",
+        "tracking_number": "1Z1F92320318576758",
+        "items": [
+          {
+            "line": "• item: Gymshark Power Straight Leg Pants; color: GS black/GS asphalt grey; size: L; qty: 1; personal: yes; owner: JJ; inferred: yes; unit: 37.44 usd",
+            "unit_price": 37.44,
+            "qty": 1,
+            "subtotal": 37.44
+          },
+          {
+            "line": "• item: Gymshark Crest Oversized Joggers; color: GS black; size: L; qty: 1; personal: yes; owner: JJ; inferred: yes; unit: 28.80 usd",
+            "unit_price": 28.8,
+            "qty": 1,
+            "subtotal": 28.8
+          },
+          {
+            "line": "• item: Gymshark Power Oversized Hoodie; color: black/conditioning red; size: M; qty: 1; personal: yes; owner: JJ; inferred: yes; unit: 39.06 usd",
+            "unit_price": 39.06,
+            "qty": 1,
+            "subtotal": 39.06
+          },
+          {
+            "line": "• item: Gymshark x Carlos Belcast Track Pant; color: GS black; size: M; qty: 1; personal: yes; owner: Agusto; inferred: yes; unit: 57.60 usd",
+            "unit_price": 57.6,
+            "qty": 1,
+            "subtotal": 57.6
+          },
+          {
+            "line": "• item: Gymshark Pumper Pants; color: black/grey; size: M; qty: 1; personal: yes; owner: Agusto; inferred: yes; unit: 35.28 usd",
+            "unit_price": 35.28,
+            "qty": 1,
+            "subtotal": 35.28
+          }
+        ],
+        "subtotal_items_usd": 198.18,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 19.82,
+        "discount_already_applied": true,
+        "taxes_usd": 16.36,
+        "adjustment_usd": null,
+        "total_usd": 214.54
+      },
+      {
+        "guide_raw": "CASI420785219205590267338808841279",
+        "tracking_number": "420785219205590267338808841279",
+        "items": [
+          {
+            "line": "• item: Executioner Banana Shape Uncuffed Sweatpants; color: darkness; size: XS; qty: 1; personal: yes; owner: Luis; unit: 90.00 usd",
+            "unit_price": 90.0,
+            "qty": 1,
+            "subtotal": 90.0
+          }
+        ],
+        "subtotal_items_usd": 90.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 13.95,
+        "discount_usd": 8.1,
+        "discount_already_applied": false,
+        "taxes_usd": 7.91,
+        "adjustment_usd": 0.06,
+        "total_usd": 103.7
+      }
+    ],
+    "fecha": "2026-07-08"
+  },
+  {
+    "folio": "CONS_SIN_ASIGNAR_202607",
+    "paquetes": [
+      {
+        "guide_raw": "4207852170149334620826000001283829",
+        "tracking_number": "4207852170149334620826000001283829",
+        "items": [
+          {
+            "line": "• item: 5197 Demon Slayer Kimetsu no Yaiba Quarter Zip; color: warding masks; size: S; qty: 1; personal: yes; owner: Luis; unit: 24.00 usd",
+            "unit_price": 24.0,
+            "qty": 1,
+            "subtotal": 24.0
+          },
+          {
+            "line": "• item: 2064 Sideline Joggers; color: black; size: M; qty: 1; personal: yes; owner: Luis; unit: 50.00 usd",
+            "unit_price": 50.0,
+            "qty": 1,
+            "subtotal": 50.0
+          },
+          {
+            "line": "• item: 2069 Elevated Essentials Baggy Joggers; color: black wash; size: S; qty: 1; personal: yes; owner: Luis; unit: 58.00 usd",
+            "unit_price": 58.0,
+            "qty": 1,
+            "subtotal": 58.0
+          }
+        ],
+        "subtotal_items_usd": 132.0,
+        "shipping_protection_usd": 3.75,
+        "shipping_usd": 0.0,
+        "discount_usd": 27.15,
+        "discount_already_applied": false,
+        "taxes_usd": 8.96,
+        "adjustment_usd": null,
+        "total_usd": 117.56
+      }
+    ],
+    "fecha": "NO_DISPONIBLE"
+  },
+  {
+    "folio": "CONS_FUERA_DE_SISTEMA",
+    "paquetes": [
+      {
+        "guide_raw": "FEDEX380419641012",
+        "tracking_number": "FEDEX380419641012",
+        "items": [
+          {
+            "line": "• item: Godzilla Hell Forever Hoodie; color: black; size: S; qty: 1; personal: yes; owner: unspecified; unit: 85.00 usd",
+            "unit_price": 85.0,
+            "qty": 1,
+            "subtotal": 85.0
+          },
+          {
+            "line": "• item: Godzilla Hell Lounger Sweat Pants; color: black; size: S; qty: 1; personal: yes; owner: unspecified; unit: 85.00 usd",
+            "unit_price": 85.0,
+            "qty": 1,
+            "subtotal": 85.0
+          }
+        ],
+        "subtotal_items_usd": 170.0,
+        "shipping_protection_usd": 3.15,
+        "shipping_usd": 14.95,
+        "discount_usd": 17.31,
+        "discount_already_applied": false,
+        "taxes_usd": 13.66,
+        "adjustment_usd": null,
+        "total_usd": 184.45
+      },
+      {
+        "guide_raw": "FEDEX380416815890",
+        "tracking_number": "FEDEX380416815890",
+        "items": [
+          {
+            "line": "• item: Monsters In Time Lex Double Layer Hoodie; color: black/black; size: M; qty: 1; personal: yes; owner: JJ; inferred: yes; unit: 68.00 usd",
+            "unit_price": 68.0,
+            "qty": 1,
+            "subtotal": 68.0
+          },
+          {
+            "line": "• item: Monsters In Time Eternal Wide Leg Pants; color: black; size: L; qty: 1; personal: yes; owner: JJ; inferred: yes; unit: 68.00 usd",
+            "unit_price": 68.0,
+            "qty": 1,
+            "subtotal": 68.0
+          }
+        ],
+        "subtotal_items_usd": 136.0,
+        "shipping_protection_usd": 2.45,
+        "shipping_usd": 14.95,
+        "discount_usd": 34.0,
+        "discount_already_applied": true,
+        "taxes_usd": 12.26,
+        "adjustment_usd": null,
+        "total_usd": 165.66
+      },
+      {
+        "guide_raw": "1Z08X89AYW00349426",
+        "tracking_number": "1Z08X89AYW00349426",
+        "items": [
+          {
+            "line": "• item: Gymshark Vital Seamless 2.0 Leggings; color: cobalt purple marl; size: S; qty: 1; personal: no; unit: 32.40 usd",
+            "unit_price": 32.4,
+            "qty": 1,
+            "subtotal": 32.4
+          },
+          {
+            "line": "• item: Gymshark Minimal Sports Bra; color: black; size: S; qty: 1; personal: no; unit: 21.00 usd",
+            "unit_price": 21.0,
+            "qty": 1,
+            "subtotal": 21.0
+          },
+          {
+            "line": "• item: Gymshark Adapt Animal Seamless Sports Bra; color: cherry purple/reset pink; size: M; qty: 1; personal: no; unit: 32.20 usd",
+            "unit_price": 32.2,
+            "qty": 1,
+            "subtotal": 32.2
+          },
+          {
+            "line": "• item: Gymshark Flex High Waisted Leggings; color: black; size: S; qty: 1; personal: no; unit: 30.00 usd",
+            "unit_price": 30.0,
+            "qty": 1,
+            "subtotal": 30.0
+          },
+          {
+            "line": "• item: Gymshark Everyday Seamless Shorts 2.0; color: GS black; size: M; qty: 1; personal: no; unit: 22.40 usd",
+            "unit_price": 22.4,
+            "qty": 1,
+            "subtotal": 22.4
+          },
+          {
+            "line": "• item: Gymshark Vital Sports Bra; color: cobalt purple marl; size: S; qty: 1; personal: no; unit: 15.20 usd",
+            "unit_price": 15.2,
+            "qty": 1,
+            "subtotal": 15.2
+          }
+        ],
+        "subtotal_items_usd": 153.2,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 15.32,
+        "discount_already_applied": false,
+        "taxes_usd": 11.37,
+        "adjustment_usd": null,
+        "total_usd": 149.25
+      },
+      {
+        "guide_raw": "SBAAAAQLJHVRGP222_FEDEX382233588111",
+        "tracking_number": "SBAAAAQLJHVRGP222_FEDEX382233588111",
+        "items": [
+          {
+            "line": "• item: Civil Racing Biker Jacket; color: red; size: M; qty: 1; personal: yes; owner: Luis or Yves - verify; inferred: yes; unit: 127.50 usd",
+            "unit_price": 127.5,
+            "qty": 1,
+            "subtotal": 127.5
+          },
+          {
+            "line": "• item: Civil Racing Biker Jacket; color: red; size: S; qty: 1; personal: yes; owner: Luis or Yves - verify; inferred: yes; unit: 127.50 usd",
+            "unit_price": 127.5,
+            "qty": 1,
+            "subtotal": 127.5
+          }
+        ],
+        "subtotal_items_usd": 255.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 14.95,
+        "discount_usd": 45.0,
+        "discount_already_applied": true,
+        "taxes_usd": 21.59,
+        "adjustment_usd": null,
+        "total_usd": 291.54
+      },
+      {
+        "guide_raw": "1Z08X89A0320535275",
+        "tracking_number": "1Z08X89A0320535275",
+        "items": [
+          {
+            "line": "• item: Onyx 5.0 Seamless T-Shirt; size: UNKNOWN; qty: 9; personal: no; inferred: yes; unit: 45.00 usd",
+            "unit_price": 45.0,
+            "qty": 9,
+            "subtotal": 405.0
+          }
+        ],
+        "subtotal_items_usd": 405.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 40.5,
+        "discount_already_applied": true,
+        "taxes_usd": 33.39,
+        "adjustment_usd": null,
+        "total_usd": 438.39
+      },
+      {
+        "guide_raw": "1Z08YY74YW30322345",
+        "tracking_number": "1Z08YY74YW30322345",
+        "items": [
+          {
+            "line": "• item: Onyx 5.0 Seamless Long Sleeve T-Shirt; color: purple; size: S; qty: 1; personal: no; inferred: yes; unit: 50.40 usd",
+            "unit_price": 50.4,
+            "qty": 1,
+            "subtotal": 50.4
+          },
+          {
+            "line": "• item: Onyx 5.0 Seamless Long Sleeve T-Shirt; color: OG blue; size: XS; qty: 1; personal: no; inferred: yes; unit: 50.40 usd",
+            "unit_price": 50.4,
+            "qty": 1,
+            "subtotal": 50.4
+          }
+        ],
+        "subtotal_items_usd": 100.8,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 10.08,
+        "discount_already_applied": true,
+        "taxes_usd": 8.32,
+        "adjustment_usd": null,
+        "total_usd": 109.12
+      },
+      {
+        "guide_raw": "1Z08X89AYW01891981",
+        "tracking_number": "1Z08X89AYW01891981",
+        "items": [
+          {
+            "line": "• item: Gymshark Power T-Shirt; color: black/conditioning red; size: M; qty: 1; personal: no; unit: 28.80 usd",
+            "unit_price": 28.8,
+            "qty": 1,
+            "subtotal": 28.8
+          },
+          {
+            "line": "• item: Gymshark Kettlebell Charm; color: conditioning red; size: one size; qty: 3; personal: no; inferred: yes; unit: 20.40 usd",
+            "unit_price": 20.4,
+            "qty": 3,
+            "subtotal": 61.2
+          }
+        ],
+        "subtotal_items_usd": 90.0,
+        "shipping_protection_usd": 0.0,
+        "shipping_usd": 0.0,
+        "discount_usd": 3.6,
+        "discount_already_applied": true,
+        "taxes_usd": 7.42,
+        "adjustment_usd": null,
+        "total_usd": 97.42
+      }
+    ],
+    "fecha": "NO_DISPONIBLE"
+  }
+]
