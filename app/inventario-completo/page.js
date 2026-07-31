@@ -1,6 +1,7 @@
 import { q } from '@/lib/db'
 import { ArrowLeft, Package } from 'lucide-react'
 import Link from 'next/link'
+import { CopyableRow } from './CopyableRow'
 
 export const dynamic = 'force-dynamic'
 
@@ -47,16 +48,17 @@ export default async function InventarioCompletoPage({ searchParams }) {
         ELSE 'Sin stock'
       END as estado_comercial_calculado,
       s.precio_lista_mxn,
-      -- Costos: primero de piezas (v_pieza_costo), sino de sku_costo (ya en MXN)
-      COALESCE(vpc.costo_prenda_mxn, sc.costo_producto_usd) as costo_producto_mxn,
-      COALESCE(vpc.cruce_pieza_mxn, sc.costo_envio_usd) as costo_envio_mxn,
-      COALESCE(vpc.costo_total_mxn, sc.costo_total_usd) as costo_total_mxn,
-      (s.precio_lista_mxn - COALESCE(vpc.costo_total_mxn, sc.costo_total_usd)) as margen_bruto_mxn,
+      -- Costos: usar vista con estimados, sino de sku_costo como fallback (ya en MXN a pesar del nombre)
+      COALESCE(vpce.costo_prenda_mxn, sc.costo_producto_usd, 0) as costo_producto_mxn,
+      COALESCE(vpce.cruce_pieza_estimado_mxn, sc.costo_envio_usd, 0) as costo_envio_mxn,
+      COALESCE(vpce.costo_total_estimado_mxn, sc.costo_total_usd, 0) as costo_total_mxn,
+      COALESCE(vpce.es_costo_estimado, 0) as es_costo_estimado,
+      (s.precio_lista_mxn - COALESCE(vpce.costo_total_estimado_mxn, sc.costo_total_usd, 0)) as margen_bruto_mxn,
       CASE
-        WHEN s.precio_lista_mxn > 0 THEN ((s.precio_lista_mxn - COALESCE(vpc.costo_total_mxn, sc.costo_total_usd)) / s.precio_lista_mxn)
+        WHEN s.precio_lista_mxn > 0 THEN ((s.precio_lista_mxn - COALESCE(vpce.costo_total_estimado_mxn, sc.costo_total_usd, 0)) / s.precio_lista_mxn)
         ELSE 0
       END as margen_bruto_pct,
-      (COALESCE(vpc.costo_total_mxn, sc.costo_total_usd) * 1.2) as precio_minimo_sugerido,
+      (COALESCE(vpce.costo_total_estimado_mxn, sc.costo_total_usd, 0) * 1.2) as precio_minimo_sugerido,
       fv.factor,
       -- Movimientos desglosados
       COALESCE((SELECT SUM(m2.cantidad) FROM movimiento m2
@@ -69,7 +71,7 @@ export default async function InventarioCompletoPage({ searchParams }) {
     JOIN tipo_prenda tp ON tp.id = pr.tipo_prenda_id
     LEFT JOIN ubicacion u ON u.id = s.ubicacion_id
     LEFT JOIN v_stock vs ON vs.sku_id = s.id
-    LEFT JOIN v_pieza_costo vpc ON vpc.sku_id = s.id
+    LEFT JOIN v_pieza_costo_con_estimado vpce ON vpce.sku_id = s.id
     LEFT JOIN sku_costo sc ON sc.sku_id = s.id
     LEFT JOIN factor_volumetrico fv ON fv.tipo_prenda_id = tp.id AND fv.marca_id = m.id
     WHERE ${where.join(' AND ')}
@@ -169,8 +171,36 @@ export default async function InventarioCompletoPage({ searchParams }) {
                   const margenPct = parseFloat(s.margen_bruto_pct || 0)
                   const stockNum = parseInt(s.stock_disponible || 0)
 
+                  // Preparar datos para copiar (sin formato, valores crudos)
+                  const rowData = {
+                    codigo: s.codigo,
+                    estado: s.estado || 'ACTIVO',
+                    marca: s.marca,
+                    producto: s.producto,
+                    tipo: s.tipo,
+                    talla: s.talla,
+                    color: s.color,
+                    codigo_proveedor: s.codigo_proveedor,
+                    ubicacion: s.ubicacion,
+                    stock: (parseInt(s.stock_disponible || 0) + parseInt(s.reservado || 0)),
+                    entradas: s.entradas || 0,
+                    salidas: s.salidas || 0,
+                    reservado: s.reservado || 0,
+                    disponible: stockNum,
+                    costo_producto: parseFloat(s.costo_producto_mxn || 0).toFixed(2),
+                    costo_envio: parseFloat(s.costo_envio_mxn || 0).toFixed(2),
+                    costo_total: parseFloat(s.costo_total_mxn || 0).toFixed(2),
+                    precio_lista: parseFloat(s.precio_lista_mxn || 0).toFixed(2),
+                    margen_mxn: parseFloat(s.margen_bruto_mxn || 0).toFixed(2),
+                    margen_pct: (margenPct * 100).toFixed(1),
+                    precio_minimo: parseFloat(s.precio_minimo_sugerido || 0).toFixed(2),
+                    estado_comercial: s.estado_comercial_calculado || s.estado_comercial || 'Sin stock',
+                    factor: s.factor ? parseFloat(s.factor).toFixed(1) : '',
+                    notas: s.notas || ''
+                  }
+
                   return (
-                    <tr key={s.sku_id} className={`hover:bg-stone-50 ${stockNum < 0 ? 'bg-red-50' : ''}`}>
+                    <CopyableRow key={s.sku_id} rowData={rowData}>
                       <td className="px-2 py-2 font-mono sticky left-0 bg-white">{s.codigo}</td>
                       <td className="px-2 py-2">
                         <span className={`inline-flex px-1.5 py-0.5 text-[10px] font-medium rounded ${
@@ -253,7 +283,7 @@ export default async function InventarioCompletoPage({ searchParams }) {
                       <td className="px-2 py-2 text-xs text-stone-500 max-w-[100px] truncate" title={s.notas}>
                         {s.notas || '—'}
                       </td>
-                    </tr>
+                    </CopyableRow>
                   )
                 })
               )}
